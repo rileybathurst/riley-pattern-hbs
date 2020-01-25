@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    #BUTTONS
+\*------------------------------------*/
+
+/**
+ * Button and submit inputs reset
+ * 1) These should be styled using c-btn
+ */
+button {
+    cursor: pointer;
+
+    margin: 0; /* bring the element back inline */
+	background: none; // why important?
+	border-top: none;
+	border-left: none;
+	color: $primary-color;
+	border-color: $primary-color;
+	font-weight: bold;
+	font-size: 1.5em; // type scale?
+	/* padding-right: $global-padding; this was causing issues with hover looking strange but maybe I had done it or a reason?
+	padding-bottom: $global-padding;
+	*/ 
+	transition: 0.5s;
+	padding: $global-padding/2; // front page on 0 doesnt work
+
+	@media (min-width: map-get($breakpoints, medium)) {
+		font-size: 2em; // type scale?
+	} 
+}

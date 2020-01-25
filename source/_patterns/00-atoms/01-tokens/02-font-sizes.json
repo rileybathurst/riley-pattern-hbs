@@ -1,0 +1,13 @@
+{
+  "items": [
+    {
+      "name": "h1",
+      "value": "3.052em",
+      "line-height": "1.15",
+      "comment": ""
+    }
+  ],
+  "meta": {
+    "description": "To add to these items, use Sass variables that start with <code>$font-size-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+  }
+}

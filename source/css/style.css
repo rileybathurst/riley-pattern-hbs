@@ -1,0 +1,1587 @@
+/*------------------------------------*\
+    #TABLE OF CONTENTS
+\*------------------------------------*/
+/**
+ * ABSTRACTS..............................Declarations of Sass variables & mixins
+ * BASE...................................Default element styles
+ * LAYOUT.................................Layout-specific styles
+ * COMPONENTS.............................Component styles
+ * UTILITIES..............................Utility classes
+ */
+/*------------------------------------*\
+    #ABSTRACTS
+\*------------------------------------*/
+/*------------------------------------*\
+    #VARIABLES
+\*------------------------------------*/
+/**
+ * CONTENTS
+ *
+ * COLORS
+ * Brand Colors...............Globally-available variables and config
+ * Neutral Colors.............Grayscale colors, including white and black
+ * Utility Colors.............Info, Warning, Error, Success
+ *
+ * TYPOGRAPHY
+ * Font Families..............The fonts used in the design system
+ * Sizing.....................Font sizing
+ *
+ * LAYOUT
+ * Max-widths.................Maximum layout container width
+ *
+
+ * SPACING
+ * Spacing defaults...........Spacing between elements
+ *
+ * BORDERS
+ * Border Width...............Border thicknesses
+ * Border Radius..............Border radius definitions
+ *
+ * ANIMATION
+ * Animation Speed............Transition/animation speed variables
+ * Animation easing...........Easing variables
+ *
+ * BREAKPOINTS
+ * Breakpoints................Global breakpoint definitions
+ */
+/*------------------------------------*\
+     #COLORS
+ \*------------------------------------*/
+/**
+ * Brand Colors
+ * 1) Brand=specific colors
+ */
+/**
+ * Neutral Colors
+ * 1) Neutral colors are grayscale values used throughout the UI
+ */
+/**
+ * Utility Colors
+ * 1) Utility colors are colors used to provide feedback, such as alert messages,
+ *    form validation, etc.
+ */
+/*------------------------------------*\
+    #TYPOGRAPHY
+\*------------------------------------*/
+/**
+ * Font Family
+ */
+/**
+ * Font Sizing
+ */
+h1 {
+  font-size: 3.052em;
+  line-height: 1.15;
+}
+
+/**
+ * Line Height
+ */
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+/**
+ * Max Width
+ */
+/*------------------------------------*\
+    #SPACING
+\*------------------------------------*/
+/**
+ * Spacing and offsets
+ * 1) Used to space grids and body padding
+ */
+/*------------------------------------*\
+    #BORDERS
+\*------------------------------------*/
+/**
+ * Border widths
+ */
+/**
+ * Border radius
+ */
+/*------------------------------------*\
+    #ANIMATION
+\*------------------------------------*/
+/**
+ * Transition Speed
+ */
+/**
+ * Transition Ease
+ */
+/*------------------------------------*\
+    #BREAKPOINTS
+\*------------------------------------*/
+/**
+ * Breakpoints used in media queries
+ * 1) These are not the only breakpoints used, but they provide a few defaults
+ */
+/*------------------------------------*\
+    #MIXINS
+\*------------------------------------*/
+/**
+ * Body Styles 
+ * 1) Prevent Mobile Safari from scaling up text: https://blog.55minutes.com/2012/04/iphone-text-resizing/
+ */
+/**
+ * XL Type Styles
+ */
+/**
+ * XL Heading Styles
+ */
+/**
+ * Large Heading Styles
+ */
+/**
+ * Medium 2 Heading Styles
+ */
+/**
+ * Medium Heading Styles
+ */
+/*------------------------------------*\
+    #COLORS
+\*------------------------------------*/
+/**
+ * In this file, we take the literal colors from our palette (defined in variables.scss)
+ * and define them against variables that we can utilise anywhere throughout the project.
+ */
+/*------------------------------------*\
+    #GLOBAL TEXT COLOR
+\*------------------------------------*/
+/**
+ * Body text and background colors
+ */
+/**
+ * Highlight colors
+ */
+/*------------------------------------*\
+    #LINKS
+\*------------------------------------*/
+/*------------------------------------*\
+    #BUTTONS
+\*------------------------------------*/
+/*------------------------------------*\
+    #FORMS
+\*------------------------------------*/
+/*------------------------------------*\
+    #BASE
+\*------------------------------------*/
+/*------------------------------------*\
+    #RESET
+\*------------------------------------*/
+/**
+ * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+* {
+  box-sizing: border-box;
+}
+
+/**
+ * 1) Zero out margins and padding for elements
+ */
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, legend, label, table, header, footer, nav, section, figure {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * 1) Set HTML5 elements to display: block
+ */
+header, footer, nav, section, article, figure {
+  display: block;
+}
+
+/*------------------------------------*\
+    #BODY
+\*------------------------------------*/
+/**
+ * HTML base styles
+ * 1) Set the html element's height to at least 100% of the viewport.
+ *    This is used to achieve a sticky footer
+ */
+html {
+  min-height: 100vh;
+  /* 1 */
+}
+
+/**
+ * Body base styles
+ * 1) Set the body element's height to at least 100% of the viewport.
+ *    This is used to achieve a sticky footer
+ */
+body {
+  min-height: 100vh;
+  /* 1 */
+  font-family: "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  /* 1 */
+  background-color: #fff;
+  color: #131313;
+}
+
+/*------------------------------------*\
+    #LINKS
+\*------------------------------------*/
+/**
+ * Link base styles
+ */
+a {
+  color: #c22127;
+}
+a:hover, a:focus {
+  color: #8a0000;
+  text-decoration: line-through;
+}
+a:active {
+  color: #131313;
+  text-decoration: line-through;
+}
+a:visited {
+  color: #131313;
+  text-decoration: line-through;
+}
+
+.a-hover {
+  text-decoration: line-through;
+}
+
+/*------------------------------------*\
+    #LISTS
+\*------------------------------------*/
+/**
+ * 1) List base styles
+ */
+/**
+ * Remove list styles from unordered and ordered lists
+ */
+ol, ul {
+  list-style: none;
+}
+
+/*------------------------------------*\
+    #HEADINGS
+\*------------------------------------*/
+h1, h2, h3, h4, h5 {
+  margin: 2.75rem 0 1rem;
+  line-height: 1.15;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.052em;
+}
+
+h2 {
+  font-size: 2.441em;
+}
+
+h3 {
+  font-size: 1.953em;
+}
+
+h4 {
+  font-size: 1.563em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+small, .text_small {
+  font-size: 0.8em;
+}
+
+/*------------------------------------*\
+    #FORMS
+\*------------------------------------*/
+/**
+ * 1) Form element base styles
+ */
+/**
+ * Input placeholder text base styles
+ */
+::-webkit-input-placeholder {
+  color: #808080;
+}
+
+::-moz-placeholder {
+  color: #808080;
+}
+
+:-ms-input-placeholder {
+  color: #808080;
+}
+
+/**
+ * Fieldset base styles
+ */
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/**
+ * Legend base styles
+ */
+legend {
+  margin-bottom: 0.25rem;
+}
+
+/**
+ * Label base styles
+ */
+label {
+  display: block;
+  padding-bottom: 0.25rem;
+  color: #131313;
+}
+
+/**
+ * Add font size 100% of form element and margin 0 to these elements
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/**
+ * Text area base styles
+ */
+textarea {
+  resize: none;
+}
+
+/**
+ * Input  and text area base styles
+ */
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #444;
+  background: #fff;
+}
+input:focus,
+textarea:focus {
+  border-color: #131313;
+}
+
+/**
+ * Remove webkit appearance styles from these elements
+ */
+input[type=text],
+input[type=search],
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=url],
+input[type=number],
+textarea {
+  -webkit-appearance: none;
+  display: block;
+}
+
+/**
+ * Checkbox and radio button base styles
+ */
+input[type=checkbox],
+input[type=radio] {
+  width: auto;
+  margin-right: 0.3rem;
+  border-color: #444;
+}
+
+/**
+ * Search input base styles
+ */
+input[type=search] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+/**
+ * Select
+ * 1) Remove default styling
+ */
+select {
+  display: block;
+  font-size: 1rem;
+  width: 100%;
+  border: 1px solid #444;
+  padding: 0.5rem;
+  background: #fff;
+  color: #131313;
+}
+select:focus {
+  border-color: #131313;
+}
+
+/*------------------------------------*\
+    #BUTTONS
+\*------------------------------------*/
+/**
+ * Button and submit inputs reset
+ * 1) These should be styled using c-btn
+ */
+button {
+  cursor: pointer;
+  margin: 0;
+  /* bring the element back inline */
+  background: none;
+  border-top: none;
+  border-left: none;
+  color: #c22127;
+  border-color: #c22127;
+  font-weight: bold;
+  font-size: 1.5em;
+  /* padding-right: $global-padding; this was causing issues with hover looking strange but maybe I had done it or a reason?
+  padding-bottom: $global-padding;
+  */
+  transition: 0.5s;
+  padding: 0.5rem;
+}
+@media (min-width: 640px) {
+  button {
+    font-size: 2em;
+  }
+}
+
+/*------------------------------------*\
+    #MAIN ELEMENT
+\*------------------------------------*/
+/**
+ * Main element
+ */
+[role=main] {
+  display: block;
+  padding: 1rem;
+}
+
+/*------------------------------------*\
+    #MEDIA
+\*------------------------------------*/
+/**
+ * Responsive image styling
+ * 1) Allows for images to flex with varying screen size
+ */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  fill: currentColor;
+  width: 1em;
+}
+
+/*------------------------------------*\
+    #TEXT
+\*------------------------------------*/
+/**
+ * Paragraph base styles
+ */
+p {
+  margin-bottom: 1rem;
+}
+
+/**
+ * Blockquote base styles
+ */
+blockquote {
+  font-style: italic;
+  border-left: 1px solid #808080;
+  color: #808080;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+/**
+ * Horizontal rule base styles
+ */
+hr {
+  border: 0;
+  height: 1px;
+  background: #808080;
+  margin: 1rem 0;
+}
+
+/**
+ * Selection styles
+ */
+::-moz-selection {
+  color: #131313;
+  background: #ddd;
+  /* Gecko Browsers */
+}
+
+::selection {
+  color: #131313;
+  background: #ddd;
+  /* WebKit/Blink Browsers */
+}
+
+/**
+ * Code base styles
+ */
+code {
+  display: inline-block;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 0.2rem 0.5rem;
+  line-height: 1.2;
+  font-size: 0.85rem;
+}
+
+/**
+ * Preformatted text base styles
+ */
+pre {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  padding: 1rem;
+  overflow-x: auto;
+  /**
+   * Remove border from code within preformatted text block
+   */
+}
+pre code {
+  border: 0;
+}
+
+/**
+ * Code with languages associated with them
+ * 1) Override Prism sysles for code blocks with language
+ */
+code[class*=language-],
+pre[class*=language-] {
+  font-family: monospace !important;
+}
+
+/*------------------------------------*\
+    #TABLES
+\*------------------------------------*/
+/**
+ * Table
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+/**
+ * Table header cell
+ */
+th {
+  text-align: left;
+}
+
+/**
+ * Table row
+ */
+tr {
+  vertical-align: top;
+}
+
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+/**
+ *
+ * 1) This caps the width of text passages
+ *    to achieve a comfortable line length
+ */
+.l-linelength-container {
+  max-width: 36rem;
+}
+
+/*------------------------------------*\
+    #GRID
+\*------------------------------------*/
+/*------------------------------------*\
+    #UTILITIES
+\*------------------------------------*/
+/*------------------------------------*\
+    #VISIBILITY CLASSES
+\*------------------------------------*/
+/**
+ * Is Hidden
+ * 1) Completely remove from the flow and screen readers.
+ */
+.u-is-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/**
+ * Is Visibly Hidden
+ * 1) Completely remove from the flow but leave available to screen readers.
+ */
+.u-is-vishidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/*------------------------------------*\
+    #SPACING
+\*------------------------------------*/
+/**
+ * Margin bottom none
+ * 1) Force margin bottom of 0
+ */
+.u-margin-bottom-none {
+  margin-bottom: 0 !important;
+}
+
+/**
+ * Margin bottom small
+ * 1) Force margin bottom of $spacing-small variable
+ */
+.u-margin-bottom-small {
+  margin-bottom: 1rem !important;
+}
+
+/**
+ * Margin bottom
+ * 1) Force margin bottom of $spacing variable
+ */
+.u-margin-bottom {
+  margin-bottom: 1rem !important;
+}
+
+/**
+ * Margin bottom large
+ * 1) Force margin bottom of $spacing-large variable
+ */
+.u-margin-bottom-large {
+  margin-bottom: 2rem !important;
+}
+
+.u-margin-bottom-large-to-xxl {
+  margin-bottom: 2rem !important;
+}
+@media all and (min-width: 60em) {
+  .u-margin-bottom-large-to-xxl {
+    margin-bottom: 8rem !important;
+  }
+}
+
+/**
+ * Margin top none
+ * 1) Force margin top of 0
+ */
+.u-margin-top-none {
+  margin-top: 0 !important;
+}
+
+/**
+ * Margin top small
+ * 1) Force margin top of $spacing-small variable
+ */
+.u-margin-top-small {
+  margin-top: 1rem !important;
+}
+
+/**
+ * Margin top
+ * 1) Force margin top of $spacing variable
+ */
+.u-margin-top {
+  margin-top: 1rem !important;
+}
+
+/**
+ * Margin top large
+ * 1) Force margin top of $spacing-large variable
+ */
+.u-margin-top-large {
+  margin-top: 2rem !important;
+}
+
+.u-margin-top-booking {
+  margin-top: 28rem !important;
+}
+
+/**
+ * Margin right none
+ * 1) Force margin right of 0
+ */
+.u-margin-right-none {
+  margin-right: 0 !important;
+}
+
+/**
+ * Margin right small
+ * 1) Force margin right of $spacing-small variable
+ */
+.u-margin-right-small {
+  margin-right: 1rem !important;
+}
+
+/**
+ * Margin right
+ * 1) Force margin right of $spacing variable
+ */
+.u-margin-right {
+  margin-right: 1rem !important;
+}
+
+/**
+ * Margin right large
+ * 1) Force margin right of $spacing-large variable
+ */
+.u-margin-right-large {
+  margin-right: 2rem !important;
+}
+
+/**
+ * Margin left none
+ * 1) Force margin left of 0
+ */
+.u-margin-left-none {
+  margin-left: 0 !important;
+}
+
+/**
+ * Margin left small
+ * 1) Force margin left of $spacing-small variable
+ */
+.u-margin-left-small {
+  margin-left: 1rem !important;
+}
+
+/**
+ * Margin left
+ * 1) Force margin left of $spacing variable
+ */
+.u-margin-left {
+  margin-left: 1rem !important;
+}
+
+/**
+ * Margin left large
+ * 1) Force margin left of $spacing-large variable
+ */
+.u-margin-left-large {
+  margin-left: 2rem !important;
+}
+
+/**
+ * Center display block contents
+ */
+.u-margin-center {
+  margin: 0 auto !important;
+}
+
+/**
+ * Padding none
+ */
+.u-padding-none {
+  padding: 0 !important;
+}
+
+/**
+ * Padding small
+ */
+.u-padding-small {
+  padding: 1rem !important;
+}
+
+/**
+ * Padding
+ */
+.u-padding {
+  padding: 1rem !important;
+}
+
+/**
+ * Padding large
+ */
+.u-padding-large {
+  padding: 2rem !important;
+}
+
+/**
+ * Padding top none
+ */
+.u-padding-top-none {
+  padding-top: 0 !important;
+}
+
+/**
+ * Padding top small
+ */
+.u-padding-top-small {
+  padding-top: 1rem !important;
+}
+
+/**
+ * Padding top
+ */
+.u-padding-top {
+  padding-top: 1rem !important;
+}
+
+/**
+ * Padding top large
+ */
+.u-padding-top-large {
+  padding-top: 2rem !important;
+}
+
+/**
+ * Padding bottom none
+ */
+.u-padding-bottom-none {
+  padding-bottom: 0 !important;
+}
+
+/**
+ * Padding bottom small
+ */
+.u-padding-bottom-small {
+  padding-bottom: 1rem !important;
+}
+
+/**
+ * Padding bottom
+ */
+.u-padding-bottom {
+  padding-bottom: 1rem !important;
+}
+
+/**
+ * Padding bottom large
+ */
+.u-padding-bottom-large {
+  padding-bottom: 2rem !important;
+}
+
+/**
+ * Padding right none
+ */
+.u-padding-right-none {
+  padding-right: 0 !important;
+}
+
+/**
+ * Padding right small
+ */
+.u-padding-right-small {
+  padding-right: 1rem !important;
+}
+
+/**
+ * Padding right
+ */
+.u-padding-right {
+  padding-right: 1rem !important;
+}
+
+/**
+ * Padding right large
+ */
+.u-padding-right-large {
+  padding-right: 2rem !important;
+}
+
+/**
+ * Padding left none
+ */
+.u-padding-left-none {
+  padding-left: 0 !important;
+}
+
+/**
+ * Padding left small
+ */
+.u-padding-left-small {
+  padding-left: 1rem !important;
+}
+
+/**
+ * Padding left
+ */
+.u-padding-left {
+  padding-left: 1rem !important;
+}
+
+/**
+ * Padding left large
+ */
+.u-padding-left-large {
+  padding-left: 2rem !important;
+}
+
+/*------------------------------------*\
+    #COMPONENTS
+\*------------------------------------*/
+.stay-gold {
+  min-height: 50px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+body {
+  line-break: anywhere;
+}
+@media (min-width: 640px) {
+  body {
+    line-break: initial;
+  }
+}
+
+.breadcrumbs {
+  writing-mode: vertical-rl;
+}
+.breadcrumbs a {
+  color: #575757;
+  text-decoration: line-through;
+}
+
+.header-color-blocking {
+  mix-blend-mode: multiply;
+  background: #c22127;
+}
+
+.header-logo {
+  fill: #c22127;
+}
+
+.site-branding-text {
+  background: black;
+}
+@media (min-width: 640px) {
+  .site-branding-text {
+    writing-mode: vertical-rl;
+  }
+}
+.site-branding-text a {
+  font-size: 0.8em;
+  color: #fefefe;
+  padding: 1rem;
+  display: inline-block;
+}
+
+.single .site-branding-text a {
+  color: #0a0a0a;
+  padding: initial;
+}
+
+.navigation-top ul {
+  padding-left: 0;
+  /*
+  @media (min-width: map-get($breakpoints, medium)) {
+  	// padding-left: $global-padding;
+     }
+     */
+}
+
+.navigation-top ul li {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+@media (min-width: 640px) {
+  .navigation-top ul li {
+    font-size: 2.25rem;
+  }
+}
+
+/*
+.navigation-top ul li a {
+	// padding: 0; redundant
+}
+*/
+/*
+.navigation-top a {
+	// color: $black;
+	// text-decoration: underline; duplicate
+}
+
+.navigation-top a:hover {
+	// text-decoration: line-through; 
+}
+*/
+.spine {
+  writing-mode: vertical-rl;
+  color: #575757;
+}
+
+.footer_menu li {
+  font-weight: bold;
+  border: 0.25em solid #c22127;
+  padding: 1rem;
+}
+
+.footer_copyright a,
+.footer_nav a,
+.footer_contact a {
+  text-decoration: none;
+  color: #0a0a0a;
+  box-shadow: inset 0 -4px 0 #c22127;
+  transition: 300ms;
+}
+
+.footer_copyright a:hover,
+.footer_nav a:hover,
+.footer_contact a:hover {
+  border-bottom: none;
+  box-shadow: inset 0 -8px 0 #c22127;
+}
+
+.footer_nav li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+.fp-box {
+  background: #c22127;
+  color: #fefefe;
+  text-align: center;
+  font-weight: bold;
+  padding: 1rem 0;
+}
+
+.spine-border {
+  border-left: 4px solid #c22127;
+  padding-top: 3rem;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 2em;
+  border: 0.2em solid #c22127;
+  padding: 2rem;
+  color: #c22127;
+  word-wrap: break-word;
+  text-align: center;
+}
+@media (min-width: 640px) {
+  .page-title {
+    font-size: 3em;
+  }
+}
+
+.article-date {
+  font-size: 2em;
+  color: #8a8a8a;
+  margin: 0.1em 0;
+}
+
+.post-navigation a {
+  color: #0a0a0a;
+}
+
+.nav-previous,
+.nav-next {
+  font-weight: bold;
+  display: block;
+}
+
+.article-tags a {
+  color: #8a8a8a;
+  display: block;
+}
+
+.pagination {
+  margin: 3rem auto;
+  max-width: 77rem;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 2em 1fr 4fr 1fr 2em;
+}
+
+.pagination h2 {
+  /* as wordpress controls this we are using elements for the grid */
+  grid-column: 1/3;
+}
+@media (min-width: 1024px) {
+  .pagination h2 {
+    grid-column: 3/span 4;
+  }
+}
+
+.pagination .nav-links {
+  grid-column: 2/5;
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-start;
+  align-items: flex-start;
+}
+@media (min-width: 1024px) {
+  .pagination .nav-links {
+    grid-column: 3;
+  }
+}
+
+.pagination .nav-links .next, .pagination .nav-links .prev {
+  width: auto;
+  writing-mode: vertical-rl;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+.pagination span, .pagination a {
+  margin-right: 1rem;
+}
+
+.site-header {
+  width: 100%;
+  max-width: 77rem;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 2em 1fr 2em;
+}
+@media (min-width: 640px) {
+  .site-header {
+    grid-template-columns: 2em 1fr 1fr 1fr 2em;
+    grid-template-rows: 2em 1fr 2em;
+  }
+}
+
+@media (min-width: 640px) {
+  .single .site-header {
+    grid-template-rows: initial;
+    grid-template-columns: 2em 1fr 2em;
+  }
+}
+
+.breadcrumbs {
+  grid-column: 1;
+  grid-row: 2/4;
+  justify-self: center;
+}
+
+.single .breadcrumbs {
+  grid-row: 2/5;
+}
+@media (min-width: 640px) {
+  .single .breadcrumbs {
+    grid-row: 2;
+  }
+}
+
+.header-logo {
+  grid-row: 1;
+  grid-column: 3;
+  justify-self: center;
+}
+@media (min-width: 640px) {
+  .header-logo {
+    align-self: end;
+    justify-self: center;
+    grid-column: 5;
+  }
+}
+.header-logo a {
+  display: inline-block;
+}
+.header-logo a svg {
+  width: 16px;
+}
+
+.single .header-logo {
+  grid-column: 3;
+}
+
+/* I think we have fixed this now
+.home .header-logo {
+    // align-self: start; // duplicate
+	justify-self: center; // why exactly is this different? I think it should be fixes
+
+}
+*/
+.site-branding-text {
+  grid-column: 2;
+  grid-row: 2;
+  z-index: 20;
+  mix-blend-mode: screen;
+}
+@media (min-width: 640px) {
+  .site-branding-text {
+    writing-mode: vertical-rl;
+    grid-row: 1/4;
+    grid-column: 3;
+    place-self: center;
+  }
+}
+
+.single .site-branding-text {
+  background: initial;
+  mix-blend-mode: initial;
+}
+@media (min-width: 640px) {
+  .single .site-branding-text {
+    writing-mode: initial;
+    grid-row: 1;
+    grid-column: 2;
+    place-self: start;
+  }
+}
+
+/*
+add these back in when I figure out which are good 
+.single .site-branding-text {
+	grid-row: 1;
+	justify-self: start; // fix problems caused by the home page
+	padding-bottom: 0;
+	// align-self: start;
+
+	@media (min-width: map-get($breakpoints, medium)) {
+		writing-mode: horizontal-tb;
+		padding: 0;
+		grid-column: 2;
+		margin-top: 0; // ! single needs the margin but we dont here
+		margin-bottom: 0; // this was -.25em but I think I've fixed that hack to pull it to the baseline
+	}
+}
+
+.home .site-branding-text {
+    // I presume this means I want to just start with the base
+	@media (min-width: map-get($breakpoints, medium)) {
+		grid-row: 1 / 3;
+		margin-top: $global-margin*3;
+		margin-bottom: $global-margin; // can this be written as a single line?
+	}
+}
+*/
+.header-color-blocking {
+  z-index: 15;
+  grid-column: 2;
+  grid-row: 2;
+}
+@media (min-width: 640px) {
+  .header-color-blocking {
+    grid-row: 1/4;
+    grid-column: 3;
+  }
+}
+
+.custom-header-media {
+  z-index: 10;
+  grid-column: 2;
+  grid-row: 1/3;
+}
+@media (min-width: 640px) {
+  .custom-header-media {
+    grid-row: 2;
+    grid-column: 2/4;
+  }
+}
+.custom-header-media img, .custom-header-media picture {
+  width: 100%;
+}
+
+.overlaying-image {
+  filter: grayscale(100%);
+  mix-blend-mode: multiply;
+  z-index: 14;
+}
+
+.single .custom-header-media {
+  grid-row: 3;
+  align-self: end;
+}
+@media (min-width: 640px) {
+  .single .custom-header-media {
+    grid-row: 2;
+    grid-column: 2;
+  }
+}
+
+.navigation-top {
+  grid-column: 2;
+  grid-row: 3;
+}
+@media (min-width: 640px) {
+  .navigation-top {
+    grid-column: 4;
+    grid-row: 2/4;
+  }
+}
+
+.single .navigation-top {
+  grid-row: 4;
+}
+@media (min-width: 640px) {
+  .single .navigation-top {
+    grid-row: 1;
+    grid-column: 2;
+    justify-self: end;
+  }
+  .single .navigation-top ul {
+    display: flex;
+  }
+  .single .navigation-top li {
+    margin-bottom: 0;
+  }
+}
+
+/*
+.home .navigation-top {
+	grid-row: 3;
+	align-self: start;
+	margin-bottom: $global-margin;
+
+	@media (min-width: map-get($breakpoints, medium)) {
+		grid-row: 1;
+		grid-column: 4;
+		margin-bottom: $global-margin*3;
+		align-self: center;
+	}
+}
+*/
+.spine {
+  grid-column: 3;
+  grid-row: 2;
+  writing-mode: vertical-rl;
+  justify-self: center;
+}
+@media (min-width: 640px) {
+  .spine {
+    grid-row: 2/3;
+    grid-column: 5;
+    align-self: end;
+  }
+}
+
+.single .spine {
+  grid-row: 2/4;
+}
+@media (min-width: 640px) {
+  .single .spine {
+    grid-column: 3;
+    grid-row: 2/3;
+  }
+}
+
+.site-footer {
+  width: calc(100% - 2em);
+  max-width: 77rem;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+@media (min-width: 640px) {
+  .site-footer {
+    padding-top: 5rem;
+  }
+}
+
+.footer_menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  margin-bottom: 2rem;
+}
+@media (min-width: 640px) {
+  .footer_menu {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.footer_info {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+}
+@media (min-width: 640px) {
+  .footer_info {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 640px) {
+  .footer_copyright {
+    grid-column: 1;
+  }
+}
+
+@media (min-width: 640px) {
+  .footer_contact {
+    grid-column: 3;
+    text-align: right;
+  }
+}
+
+.front-page-titles {
+  width: 100%;
+  max-width: 73rem;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(6, 1fr);
+  background: #fefefe;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.background-dirty {
+  background: #e6e6e6;
+}
+
+.site-main article {
+  /* running wordpress post class prevents using a straight clasee */
+  width: 100%;
+  max-width: 77rem;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  padding-top: 2rem;
+  grid-template-columns: 4px 1fr 4fr 4fr 1fr 4px;
+}
+@media (min-width: 640px) {
+  .site-main article {
+    grid-template-columns: 2em 1fr 4fr 4fr 1fr 2em;
+  }
+}
+
+.spine-border {
+  grid-row: 1/7;
+  grid-column: 1;
+}
+
+@media (min-width: 640px) {
+  .single .spine-border {
+    grid-row: 1/6;
+  }
+}
+
+.fp-header {
+  grid-column: 2/6;
+}
+@media (min-width: 640px) {
+  .fp-header {
+    grid-column: 3/5;
+  }
+}
+
+.article-content {
+  grid-column: 2/6;
+}
+@media (min-width: 640px) {
+  .article-content {
+    grid-column: 3/5;
+  }
+}
+
+.article-date {
+  grid-row: 2;
+  grid-column: 2/6;
+}
+@media (min-width: 640px) {
+  .article-date {
+    grid-column: 3/5;
+  }
+}
+
+.article-speechbubble {
+  grid-column: 4/6;
+  justify-self: end;
+}
+@media (min-width: 640px) {
+  .article-speechbubble {
+    grid-column: 4;
+  }
+}
+
+.article-category {
+  grid-column: 2/5;
+  grid-row: 5;
+}
+@media (min-width: 640px) {
+  .article-category {
+    text-align: right;
+    grid-column: 1/3;
+    grid-row: 1/3;
+    writing-mode: vertical-rl;
+    align-self: end;
+    overflow-x: scroll;
+    max-height: 45em;
+  }
+}
+.article-category a {
+  color: #8a8a8a;
+}
+
+@media (min-width: 640px) {
+  .single .article-category {
+    grid-row: 1/5;
+    align-self: start;
+  }
+}
+.single .article-category h3 {
+  margin: 0;
+}
+
+.article-base {
+  max-width: 77rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 2em 1fr 2em;
+}
+@media (min-width: 640px) {
+  .article-base {
+    grid-template-columns: 2em 1fr 1fr 1fr 2em;
+  }
+}
+
+.base-explore {
+  grid-column: 1;
+  writing-mode: vertical-rl;
+}
+
+.article-tags {
+  grid-column: 2/5;
+}
+@media (min-width: 640px) {
+  .article-tags {
+    grid-column: 4;
+  }
+}
+
+.article-comments {
+  grid-column: 2/5;
+}
+@media (min-width: 640px) {
+  .article-comments {
+    grid-column: 3;
+  }
+}
+
+.base-tags {
+  grid-column: 1;
+  grid-row: 3;
+  writing-mode: vertical-rl;
+}
+@media (min-width: 640px) {
+  .base-tags {
+    grid-column: 5;
+    grid-row: 1;
+  }
+}
+
+.background-primary {
+  background: #c22127;
+}
+
+/*# sourceMappingURL=style.css.map */
