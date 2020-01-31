@@ -1374,8 +1374,8 @@ add these back in when I figure out which are good
 }
 
 .site-footer {
-  width: calc(100% - 2em);
-  max-width: 77rem;
+  width: calc(100% - 4rem);
+  max-width: 73rem;
   margin: 0 auto;
   padding: 1rem 0;
 }
@@ -1441,7 +1441,8 @@ add these back in when I figure out which are good
   background: #e6e6e6;
 }
 
-.site-main article {
+.site-main article,
+.site-main_article {
   /* running wordpress post class prevents using a straight clasee */
   width: 100%;
   max-width: 77rem;
@@ -1452,7 +1453,8 @@ add these back in when I figure out which are good
   grid-template-columns: 4px 1fr 4fr 4fr 1fr 4px;
 }
 @media (min-width: 640px) {
-  .site-main article {
+  .site-main article,
+.site-main_article {
     grid-template-columns: 2em 1fr 4fr 4fr 1fr 2em;
   }
 }

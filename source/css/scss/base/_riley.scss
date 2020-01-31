@@ -512,8 +512,8 @@ add these back in when I figure out which are good
 // ------------------------------------------
 
 .site-footer {
-	width: calc(100% - 2em);
-	max-width: $page-width; // keeps inside of the margins
+	width: calc(100% - 4rem);
+	max-width: 73rem; // keeps inside of the margins
 	margin: 0 auto;
 	padding: $global-padding 0;
 	// align-items: end; Why am I pushing down?
@@ -593,7 +593,9 @@ add these back in when I figure out which are good
     background: $light-gray;
 }
 
-.site-main article { /* running wordpress post class prevents using a straight clasee */
+.site-main article, // this isnt working for some reason?
+.site-main_article
+{ /* running wordpress post class prevents using a straight clasee */
 	width: 100%;
 	max-width: $page-width;
 	margin: 0 auto;
