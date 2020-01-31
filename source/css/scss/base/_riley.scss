@@ -433,7 +433,8 @@ add these back in when I figure out which are good
 }
 
 .navigation-top {
-	grid-column: 2;
+	// grid-column: 2;
+	grid-column: 1/4;
 	grid-row: 3;
 
 	@media (min-width: map-get($breakpoints, medium)) {
@@ -569,11 +570,20 @@ add these back in when I figure out which are good
     max-width: 73rem;
     margin: 0 auto;
     display: grid;
-    grid-gap: $global-grid-gap;
+    grid-gap: $global-grid-gap/2;
     grid-template-columns: repeat(6, 1fr);
     background: $white;
     padding-left: 1rem;
-    padding-right: 1rem;
+	padding-right: 1rem;
+	
+	// this needs a couple of media queries to match the header grid
+	@media (min-width: map-get($breakpoints, medium)) {
+		grid-gap: $global-grid-gap;
+	}
+
+	@media (min-width: 77rem) {
+
+	}
 }
 
 // more ogranisms
@@ -593,6 +603,7 @@ add these back in when I figure out which are good
 	padding-top: $global-padding*2;
 
 	grid-template-columns: 4px 1fr 4fr 4fr 1fr 4px;
+	// maybe this should be to match the header and footer grid atleast at large sizes 2em 1fr 2fr 2fr 1fr 2em
 
 	@media (min-width: map-get($breakpoints, medium)) {
 		grid-template-columns: 2em 1fr 4fr 4fr 1fr 2em;

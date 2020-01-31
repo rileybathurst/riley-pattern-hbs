@@ -1308,7 +1308,7 @@ add these back in when I figure out which are good
 }
 
 .navigation-top {
-  grid-column: 2;
+  grid-column: 1/4;
   grid-row: 3;
 }
 @media (min-width: 640px) {
@@ -1426,13 +1426,17 @@ add these back in when I figure out which are good
   max-width: 73rem;
   margin: 0 auto;
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
   grid-template-columns: repeat(6, 1fr);
   background: #fefefe;
   padding-left: 1rem;
   padding-right: 1rem;
 }
-
+@media (min-width: 640px) {
+  .front-page-titles {
+    grid-gap: 1rem;
+  }
+}
 .background-dirty {
   background: #e6e6e6;
 }
