@@ -433,11 +433,11 @@ button {
   margin: 0;
   /* bring the element back inline */
   background: none;
-  border-top: none;
-  border-left: none;
   color: #c22127;
   border-color: #c22127;
   font-weight: bold;
+  border-top: none;
+  border-left: none;
   font-size: 1.5em;
   /* padding-right: $global-padding; this was causing issues with hover looking strange but maybe I had done it or a reason?
   padding-bottom: $global-padding;
@@ -449,6 +449,30 @@ button {
   button {
     font-size: 2em;
   }
+}
+
+.button__hover,
+.button:hover {
+  background: #c22127;
+  color: #fefefe;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+.article-content .button,
+.quote-content .button {
+  text-decoration: none;
+  box-shadow: none;
+  color: #c22127;
+  background: #fefefe;
+  border-right: 0.1em solid #c22127;
+  border-bottom: 0.1em solid #c22127;
+  border-bottom-right-radius: 3px;
+}
+
+.article-content .button:hover,
+.quote-content .button:hover {
+  border-bottom: 1px solid #c22127;
 }
 
 /*------------------------------------*\
@@ -519,7 +543,7 @@ hr {
   /* Gecko Browsers */
 }
 
-::selection {
+.text__selection ::selection {
   color: #131313;
   background: #ddd;
   /* WebKit/Blink Browsers */
@@ -561,6 +585,19 @@ pre code {
 code[class*=language-],
 pre[class*=language-] {
   font-family: monospace !important;
+}
+
+.is-style-mega-hr,
+.mega-hr {
+  border-bottom-width: 0.5em;
+  border-color: #fefefe;
+  border-style: solid;
+}
+@media (min-width: 640px) {
+  .is-style-mega-hr,
+.mega-hr {
+    border-bottom-width: 1em;
+  }
 }
 
 /*------------------------------------*\

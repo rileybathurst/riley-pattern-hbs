@@ -38,6 +38,7 @@ hr {
 	background: $color-text-highlight-bg; /* Gecko Browsers */
 }
 
+.text__selection // pattern lab testing
 ::selection {
 	color: $color-text-highlight;
 	background: $color-text-highlight-bg; /* WebKit/Blink Browsers */
@@ -80,4 +81,15 @@ pre {
 code[class*="language-"],
 pre[class*="language-"] {
 	font-family: monospace !important;
+}
+
+.is-style-mega-hr,
+.mega-hr { // this might be able to become a gutenberg style in for most places
+	border-bottom-width: 0.5em;
+	border-color: $white;
+	border-style: solid;
+
+	@media (min-width: map-get($breakpoints, medium)) {
+		border-bottom-width: 1em;
+	}
 }

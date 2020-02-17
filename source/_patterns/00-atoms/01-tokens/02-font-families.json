@@ -1,13 +1,13 @@
 {
   "items": [
     {
-      "name": "$body-family-primary",
+      "name": "$body-font-family",
       "value": "\"HelveticaNeue\", \"Helvetica\", \"Roboto\", \"Arial\", sans-serif",
       "comment": ""
     },
     {
-      "name": "$font-family-secondary",
-      "value": "serif",
+      "name": "$header-font-family",
+      "value": "$body-font-family",
       "comment": ""
     }
   ],

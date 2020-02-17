@@ -3,7 +3,31 @@
     {
       "name": "h1",
       "value": "3.052em",
-      "line-height": "1.15",
+      "comment": ""
+    },
+    {
+      "name": "h2",
+      "value": "2.441em",
+      "comment": ""
+    },
+    {
+      "name": "h3",
+      "value": "1.953em",
+      "comment": ""
+    },
+    {
+      "name": "h4",
+      "value": "1.563em",
+      "comment": ""
+    },
+    {
+      "name": "h5",
+      "value": "1.25em",
+      "comment": ""
+    },
+    {
+      "name": "h6",
+      "value": "1em",
       "comment": ""
     }
   ],
