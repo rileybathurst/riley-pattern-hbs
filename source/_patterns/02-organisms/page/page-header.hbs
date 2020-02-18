@@ -6,9 +6,15 @@
         <div class="custom-header-media overlaying-image">
             {{> molecules-custom-header-media }}
         </div>
+
+        <div class="single-header-top-line">{{! these two sit in the same grid space so need a flex to keep them apart }}
+            {{> molecules-site-branding-text }}
+            {{> molecules-navigation-top }}
+        </div>
+        
         {{> molecules-header-logo }}
-        {{> molecules-site-branding-text }}
-        {{> molecules-navigation-top }}
         {{> molecules-spine }}
     </header>
 </div>
+
+<small>{{{ meta.description }}}</small>

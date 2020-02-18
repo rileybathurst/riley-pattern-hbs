@@ -1208,7 +1208,7 @@ body {
 }
 
 .single .breadcrumbs {
-  grid-row: 2/5;
+  grid-row: 2;
 }
 @media (min-width: 640px) {
   .single .breadcrumbs {
@@ -1334,7 +1334,7 @@ add these back in when I figure out which are good
 }
 
 .single .custom-header-media {
-  grid-row: 3;
+  grid-row: 2;
   align-self: end;
 }
 @media (min-width: 640px) {
@@ -1394,19 +1394,17 @@ add these back in when I figure out which are good
 }
 @media (min-width: 640px) {
   .spine {
-    grid-row: 2/3;
     grid-column: 5;
     align-self: end;
   }
 }
 
 .single .spine {
-  grid-row: 2/4;
+  grid-row: 2;
 }
 @media (min-width: 640px) {
   .single .spine {
     grid-column: 3;
-    grid-row: 2/3;
   }
 }
 
@@ -1625,6 +1623,27 @@ add these back in when I figure out which are good
 
 .background-primary {
   background: #c22127;
+}
+
+.single-header-top-line {
+  grid-row: 1;
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+@media (min-width: 640px) {
+  .single-header-top-line {
+    flex-direction: row;
+  }
+}
+
+.comment-reply-title {
+  display: none;
+}
+
+#email-notes {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -278,7 +278,7 @@ body {
 }
 
 .single .breadcrumbs {
-    grid-row: 2/5;
+    grid-row: 2;
     @media (min-width: map-get($breakpoints, medium)) {
         grid-row: 2;
     }
@@ -423,7 +423,7 @@ add these back in when I figure out which are good
 // .single .custom-header-photo, // I need to define why these are all different
 // .single .custom-header-featured-video {
 	// grid-column: 2 / 5; // this is a duplicate
-	grid-row: 3;
+	grid-row: 2;
 	align-self: end;
 
 	@media (min-width: map-get($breakpoints, medium)) {
@@ -488,7 +488,6 @@ add these back in when I figure out which are good
 	// place-self: end; might need only bigger
 
 	@media (min-width: map-get($breakpoints, medium)) {
-        grid-row: 2/3;
         grid-column: 5;
         align-self: end;
         // margin-bottom: $global-margin*2; // match the base of the image
@@ -497,11 +496,10 @@ add these back in when I figure out which are good
 }
 
 .single .spine {
-    grid-row: 2/4;
+    grid-row: 2;
 
     @media (min-width: map-get($breakpoints, medium)) {
         grid-column: 3;
-        grid-row: 2/3;
     }
 }
 
@@ -741,4 +739,27 @@ add these back in when I figure out which are good
 
 .background-primary {
     background: $primary-color;
+}
+
+
+.single-header-top-line {
+	grid-row: 1;
+	grid-column: 2;
+
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+
+	@media (min-width: map-get($breakpoints, medium)) {
+		flex-direction: row;
+	}
+}
+
+.comment-reply-title {
+	display: none; // seems kinda overkill maybe this should be noted as screen-reader
+	// it's in the comments field so possible cant have the element changed
+}
+
+#email-notes {
+	display: block; // cant change selector as its in the comments block
 }
