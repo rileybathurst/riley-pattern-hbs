@@ -137,7 +137,7 @@ textarea {
 	font-weight: bold;
 	padding: $global-padding;
 	border-radius: 2px;
-	width: calc(100% - 3em); // feels like this should be 2.2em and is throwing errors on the post comment on a single page with a smaller width so should be more specific
+	// width: calc(100% - 3em); // this is causing all sorts of problems especially with the post comment button
 }
 
 input:focus,
@@ -160,11 +160,31 @@ textarea:focus {
 	border-top: none;
 	border-left: none;
 	color: $primary-color;
-	font-size: 2em;
+
 	font-weight: bold;
 	padding: $global-padding;
 	border-top-right-radius: 2px;
 	border-bottom-right-radius: 2px;
 
 	width: 100%; // can I overwrite input from above so this actually works?
+
+	// this is an update from the site
+	font-size: 1.25em;
+
+	@media (min-width: map-get($breakpoints, medium)) {
+		font-size: 1.563em; // still not 100% on this being soo big
+	}
+
+	@media (min-width: map-get($breakpoints, large)) {
+		font-size: 1.953em;
+	}
+
+	transition: 0.5s;
+}
+
+// ahead of the site
+.searchform [type="submit"]:hover,
+#commentform [type="submit"]:hover {
+	background: $primary-color;
+	color: $white;
 }

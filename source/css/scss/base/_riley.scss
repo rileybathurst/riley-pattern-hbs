@@ -12,14 +12,15 @@
 // Molecules
 // --------------------------------------------------------------
 
+/*
 body {
     // tiny screens can look bad in the header
     // unless we do a super small screensize
-    line-break: anywhere;
-    @media (min-width: map-get($breakpoints, medium)) {
+    // line-break: anywhere; but it has to only be on specific text
+	@media (min-width: map-get($breakpoints, medium)) {
         line-break: initial;
     }
-}
+} */
 
 //header
 .breadcrumbs {
@@ -179,8 +180,12 @@ body {
 	margin: 0.1em 0; // why so slender? or just be a zero
 }
 
-.post-navigation a {
+.post-navigation {
+	grid-column: 2;
+
+	a {
 	color: $black;
+	}
 }
 
 .nav-previous,
@@ -349,9 +354,9 @@ body {
     mix-blend-mode: initial;
     @media (min-width: map-get($breakpoints, medium)) {
         writing-mode: initial;
-        grid-row: 1;
-        grid-column: 2;
-        place-self: start;
+        // grid-row: 1;
+        // grid-column: 2;
+        // place-self: start;
     }
 }
 
@@ -417,6 +422,10 @@ add these back in when I figure out which are good
 	z-index: 14; // below the cololr-block above the image
 }
 
+.single .overlaying-image {
+	filter: none; // overwrite the home / category / page anything not custom
+}
+
 
 // wait till we understand these
 .single .custom-header-media {
@@ -434,7 +443,7 @@ add these back in when I figure out which are good
 
 .navigation-top {
 	// grid-column: 2;
-	grid-column: 1/4;
+	// grid-column: 1/4; // where was this from
 	grid-row: 3;
 
 	@media (min-width: map-get($breakpoints, medium)) {
@@ -447,22 +456,33 @@ add these back in when I figure out which are good
 
 .single .navigation-top {
 	// align-items: start; // seems like this is a repeat from .navigation-top
-	grid-row: 4;
+	// grid-row: 4; this is now a flex
+	// align-self: flex-end;
 
 	@media (min-width: map-get($breakpoints, medium)) {
-		grid-row: 1;
-		grid-column: 2;
+		// grid-row: 1;
+		// grid-column: 2;
         // place-self: end;
-        justify-self: end;
+        // align-self: baseline;
 
         ul {
-            display: flex;
+			display: flex;
+			// align-content: space-between;
         }
 
         li {
-            margin-bottom: 0;
-        }
+			margin-bottom: 0;
+			margin-right: $global-margin;
+		}
+		
+		li:last-child() {
+			margin-right: 0;
+		}
     }
+}
+
+.single .site-branding-text {
+	align-self: flex-start;
 }
 
 /*
@@ -691,13 +711,10 @@ add these back in when I figure out which are good
 
 .article-base {
     max-width: $page-width;
-	// margin-top: $global-margin*3; // rewrite this as a single
-	margin-left: auto;
-	margin-right: auto;
-	// margin-bottom: 0;
+	margin: $global-margin*3 auto 0 auto; // top right bottom left
 	display: grid;
 	grid-gap: $global-grid-gap;
-	grid-template-columns: 2em 1fr 2em;
+	grid-template-columns: 2em 1fr 2em; // possibly skip the right margin
 
 	@media (min-width: map-get($breakpoints, medium)) {
 		grid-template-columns: 2em 1fr 1fr 1fr 2em;
@@ -707,17 +724,18 @@ add these back in when I figure out which are good
 .base-explore {
 	grid-column: 1;
 	writing-mode: vertical-rl;
+	margin: 0; // vertical text doesnt need the margin
 }
 
 .article-tags {
-	grid-column: 2/5;
+	grid-column: 2;
 	@media (min-width: map-get($breakpoints, medium)) {
 		grid-column: 4;
 	}
 }
 
 .article-comments {
-	grid-column: 2 / 5;
+	grid-column: 2;
 	@media (min-width: map-get($breakpoints, medium)) {
 		grid-column: 3;
 	}
@@ -727,6 +745,7 @@ add these back in when I figure out which are good
 	grid-column: 1;
 	grid-row: 3;
 	writing-mode: vertical-rl;
+	margin: 0; // vertical text doesnt need margins
 
 	@media (min-width: map-get($breakpoints, medium)) {
 		grid-column: 5;
@@ -749,9 +768,14 @@ add these back in when I figure out which are good
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
+	justify-content: space-between;
 
 	@media (min-width: map-get($breakpoints, medium)) {
 		flex-direction: row;
+
+		h1 {
+			margin-bottom: 0; // help these align
+		}
 	}
 }
 
