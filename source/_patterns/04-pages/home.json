@@ -1,11 +1,66 @@
 {
+	"company": {
+		"name": "Riley Bathurst",
+		"email": "riley@rileybathurst.com",
+		"phone": "(530) 386-6296"
+	},
+	"title": "I’m A Designer.",
 	"page": {
-		"title": "Blog post",
-		"description": "Posted by Brad"
+		"description": "Pushing Pixels Since Two Thousand & Nine."
 	},
-	"htmlText": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
-	"section": {
-		"title": "section title"
-	},
-	"galleryImage": "../../images/group-shoes.jpg"
+	"galleryImage": "../../images/Riley-Bathurst-photography-profile-1080x720.jpg",
+	"cards": [
+		{
+			"title": "Design"
+		},
+		{
+			"title": "Dev"
+		},
+		{
+			"title": "Photo"
+		},
+		{
+			"title": "Video"
+		},
+		{
+			"title": ""
+		},
+		{
+			"title": ""
+		}
+	],
+	"text": [
+		{
+            "p": "Welcome to Riley Bathurst Design this is my freelance design, photography and video space."
+        },
+        {
+            "p": "I’ve been working with clients from large to small, creating logos to TV shows. I’m always up for a challenge and available to create something for you, your company or your project. I ended up here through design school, working for photographers and a desire to create as projects have come up or I have been looking at new things I have adapted my work continually through medium and style, something I wish to keep doing to keep creating the best pieces I can."
+        },
+        {
+            "p": "Enjoy your visit to my site."
+        },
+        {
+            "p": ""
+        },
+        {
+            "p": ""
+        }
+	],
+	"menu": [
+		{
+			"title": "Search"
+		},
+		{
+			"title": "Contact"
+		},
+		{
+			"title": "Blog"
+		},
+		{
+			"title": "Social"
+		},
+		{
+			"title": "Now"
+		}
+	]
 }

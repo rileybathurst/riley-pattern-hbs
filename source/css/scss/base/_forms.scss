@@ -129,3 +129,42 @@ select {
 		border-color: $color-form-border-focus;
 	}
 }
+
+// was .comment-form input, .comment-form textarea but those are base
+input,
+textarea {
+	border: 0.1em solid $medium-gray;
+	font-weight: bold;
+	padding: $global-padding;
+	border-radius: 2px;
+	width: calc(100% - 3em); // feels like this should be 2.2em and is throwing errors on the post comment on a single page with a smaller width so should be more specific
+}
+
+input:focus,
+textarea:focus {
+	outline: 0.1em solid $primary-color;
+	border-radius: 2px;
+}
+
+[type="checkbox"] {
+	width: auto;
+}
+
+.searchform [type="submit"],
+#commentform [type="submit"] {
+
+	// I think this should be an extend button
+
+	background: none; // browser reset?
+	border: 0.1em solid $primary-color;
+	border-top: none;
+	border-left: none;
+	color: $primary-color;
+	font-size: 2em;
+	font-weight: bold;
+	padding: $global-padding;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+
+	width: 100%; // can I overwrite input from above so this actually works?
+}

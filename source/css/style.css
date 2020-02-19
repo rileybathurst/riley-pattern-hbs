@@ -421,6 +421,40 @@ select:focus {
   border-color: #131313;
 }
 
+input,
+textarea {
+  border: 0.1em solid #cacaca;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 2px;
+  width: calc(100% - 3em);
+}
+
+input:focus,
+textarea:focus {
+  outline: 0.1em solid #c22127;
+  border-radius: 2px;
+}
+
+[type=checkbox] {
+  width: auto;
+}
+
+.searchform [type=submit],
+#commentform [type=submit] {
+  background: none;
+  border: 0.1em solid #c22127;
+  border-top: none;
+  border-left: none;
+  color: #c22127;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 1rem;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  width: 100%;
+}
+
 /*------------------------------------*\
     #BUTTONS
 \*------------------------------------*/
@@ -428,6 +462,7 @@ select:focus {
  * Button and submit inputs reset
  * 1) These should be styled using c-btn
  */
+.button,
 button {
   cursor: pointer;
   margin: 0;
@@ -446,13 +481,15 @@ button {
   padding: 0.5rem;
 }
 @media (min-width: 640px) {
-  button {
+  .button,
+button {
     font-size: 2em;
   }
 }
 
 .button__hover,
-.button:hover {
+.button:hover,
+button:hover {
   background: #c22127;
   color: #fefefe;
   padding-right: 1rem;
@@ -460,17 +497,17 @@ button {
 }
 
 .article-content .button,
+.article-content button,
 .quote-content .button {
   text-decoration: none;
   box-shadow: none;
-  color: #c22127;
-  background: #fefefe;
   border-right: 0.1em solid #c22127;
   border-bottom: 0.1em solid #c22127;
   border-bottom-right-radius: 3px;
 }
 
 .article-content .button:hover,
+.article-content button:hover,
 .quote-content .button:hover {
   border-bottom: 1px solid #c22127;
 }
@@ -1644,6 +1681,17 @@ add these back in when I figure out which are good
 
 #email-notes {
   display: block;
+}
+
+.article-content .button,
+.quote-content .button {
+  text-decoration: none;
+  box-shadow: none;
+  color: #c22127;
+  background: #fefefe;
+  border-right: 0.1em solid #c22127;
+  border-bottom: 0.1em solid #c22127;
+  border-bottom-right-radius: 3px;
 }
 
 /*# sourceMappingURL=style.css.map */
