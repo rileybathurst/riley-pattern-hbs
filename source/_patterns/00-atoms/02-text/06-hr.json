@@ -7,7 +7,7 @@
     },
     {
       "name": ".is-style-mega-hr, .mega-hr",
-      "value": ".mega-hr",
+      "value": "mega-hr",
       "comment": "I believe this can become the default"
     }
   ],
