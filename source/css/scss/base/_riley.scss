@@ -194,48 +194,77 @@ body {
 	display: block; // fix pattern lab not needed in site
 }
 
-.pagination {
-	margin: 3rem auto;
+.pagination { // this has been ripped to shreds but thats fine it was way over complex
+	// margin: 3rem auto;
 	max-width: $page-width;
-	display: grid;
-	grid-gap: $global-grid-gap;
-	grid-template-columns: 2em 1fr 4fr 1fr 2em; // fix
+	// display: grid; // trying to line up with other content on the page but I might be able to do that in other ways
+	// grid-gap: $global-grid-gap;
+	// grid-template-columns: 2em 1fr 2em;
+	margin: 3rem; //at a small size it doesnt need a grid it just needs the margins the 2rem of each side plus the grid-gap
+
+	/* @media (min-width: map-get($breakpoints, medium)) {
+		margin: 3rem auto;
+		// display: grid; // trying to line up with other content on the page but I might be able to do that in other ways
+		// grid-gap: $global-grid-gap;
+		// grid-template-columns: 2em 1fr 4fr 1fr 2em; // fix this its not getting used well at all
+	} */
 }
 
-.pagination h2 { /* as wordpress controls this we are using elements for the grid */
-	grid-column: 1 / 3;
+// .pagination h2 { /* as wordpress controls this we are using elements for the grid */
+/*	grid-column: 1 / 3;
 
 	@media (min-width: map-get($breakpoints, large)) {
 		grid-column: 3 / span 4;
 	}
-}
+} */ // .screen-reader-text
 
 .pagination .nav-links {
-	grid-column: 2 / 5;
+	// grid-column: 2; its not a grid small anymore
 
-	display: flex;
-	flex-direction: row;
-	justify-items: flex-start; // is there a place-items for flex?
-	align-items: flex-start;
+	/* @media (min-width: map-get($breakpoints, medium)) {
+		grid-column: 2 / 5; // this is sloppy and ugly
+	} */
 
-	@media (min-width: map-get($breakpoints, large)) {
+	display: flex; // used for vertical distribution
+	// flex-direction: row;
+	// justify-items: flex-start; // not a grid so its not useful
+
+	justify-content: center;
+
+	/* @media (min-width: map-get($breakpoints, large)) {
 		grid-column: 3;
-	}
+	} */
 }
 
 .pagination .nav-links .next, .pagination .nav-links .prev { // what is this overwritting?
-	width: auto;
+	// width: auto;
 	writing-mode: vertical-rl;
-	border-bottom: none;
-	box-shadow: none;
+	// border-bottom: none;
+	// box-shadow: none;
 }
 
 .pagination span, .pagination a {
-	margin-right: $global-margin;
+	// margin-right: $global-margin; // Im not sure if this is technically breaking the center justify and should be a padding or half padding each way?
+	padding-left: $global-padding/2; // maybe this is better its hard as its supposed to be loppsided so I would have to test better
+	padding-right: $global-padding/2;
+	align-self: center;
 }
 
+/* .pagination .next {
+	margin-right: 0; // its always last in the list
+} */
 
+.pagination .nav-links .next,
+.pagination .nav-links .prev {
+	// border-bottom: none;
+	//box-shadow: none; // would this have a box shadow?
+	color: $black;
+}
 
+.pagination .prev,
+.pagination .next {
+	font-weight: bold;
+}
 
 
 
@@ -331,7 +360,6 @@ body {
 	z-index: 20; // above the image
 	// margin-top: $global-margin; remove
 	// margin-bottom: $global-margin; // can these two be written better as a single line?
-    mix-blend-mode: screen;
 
 	@media (min-width: map-get($breakpoints, medium)) {
         writing-mode: vertical-rl;
@@ -353,6 +381,14 @@ body {
         grid-column: 2;
         place-self: start;
     }
+}
+
+.site-header .site-branding-text {
+	mix-blend-mode: screen; // needs to be only on the site header so it is always above an image
+}
+
+.single .site-header .site-branding-text {
+	mix-blend-mode: initial;
 }
 
 /*
@@ -433,8 +469,8 @@ add these back in when I figure out which are good
 }
 
 .navigation-top {
-	// grid-column: 2;
-	grid-column: 1/4;
+	grid-column: 2;
+	// grid-column: 1/4; // why did I go full age width I need the margins still
 	grid-row: 3;
 
 	@media (min-width: map-get($breakpoints, medium)) {
@@ -763,3 +799,106 @@ add these back in when I figure out which are good
 #email-notes {
 	display: block; // cant change selector as its in the comments block
 }
+
+/*--------------------------------------------------------------
+2.0 Accessibility
+--------------------------------------------------------------*/
+
+/* Text meant only for screen readers. These are the wordpress twentyseventeen option for the default places its needed */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	-webkit-border-radius: 3px; // do I need this in scss?
+	border-radius: 3px;
+	-webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); // do I need this in scss?
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+.category-sub {
+	max-width: $page-width;
+	margin: 0 auto;
+	margin-bottom: $global-margin;
+}
+
+.category-sub ul {
+	padding-left: 0;
+
+	@media (min-width: map-get($breakpoints, medium)) {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr); // this is probably far too simple and should be a flex
+		grid-gap: $global-grid-gap;
+	}
+	
+	li {
+		list-style: none;
+	}
+}
+
+.category-sub li {
+	text-align: center;
+}
+
+.footer_menu li,
+.category-sub li {
+	border: .25em solid $primary-color; // global?
+	padding: $global-padding;
+	font-weight: bold;
+}
+
+.article-thumbnail {
+	grid-column: 2 / 6;
+	grid-row: 1;
+	// max-height: 100vh; // this causes issues on wide short screens but I get the idea of something tall can be very large
+	// maybe it can be fixed with an overflow and then go even less than 100 to make it obvious and be able to scroll around it
+
+	@media (min-width: map-get($breakpoints, medium)) {
+		grid-column: 3 / 5;
+	}
+}
+
+.article-thumbnail a, .category-thumbnail a {
+	width: 100%;
+	// display: grid; // is this just for a place-items
+	display: block; // seems more suitable
+}
+
+/*
+.article-thumbnail img, .category-thumbnail img {
+	// justify-self: center; // this should be handled by the block
+}
+*/
+
+.article-thumbnail > a > img, .category-thumbnail > a > img {
+	width: 100%;
+}
+
+.category-break {
+	margin-bottom: $global-margin*3;
+}
+
+figure {
+	margin: 0; // browser reset
+}
+

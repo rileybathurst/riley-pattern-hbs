@@ -70,7 +70,7 @@ textarea {
  */
 input,
 textarea {
-	width: 100%;
+	// width: 100%; I dont have this
 	padding: 0.5rem;
 	border: $border-width solid $color-form-border;
 	background: $color-form-bg;
@@ -91,7 +91,7 @@ input[type="url"],
 input[type="number"],
 textarea {
 	-webkit-appearance: none;
-	display: block;
+	// display: block; I dont have this
 }
 
 /**
@@ -128,4 +128,33 @@ select {
 	&:focus {
 		border-color: $color-form-border-focus;
 	}
+}
+
+// Input type =search might be a thing so I should deal with that
+input[type=search] { // this comes from the webpack build as its on the css but not the scsss
+	border: 0.1em solid #cacaca;
+	border-right: none;
+	font-size: 2em;
+	font-weight: bold;
+	padding: 1rem;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+}
+
+input[type=search]:focus { // from webpackbuild as its already compiled
+	outline: 0.1em solid #c22127;
+}
+
+.searchform [type="submit"],
+#commentform [type="submit"] {
+	background: none;
+	border: 0.1em solid $primary-color;
+	border-top: none;
+	border-left: none;
+	color: $primary-color;
+	font-size: 2em;
+	font-weight: bold;
+	padding: $global-padding;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
 }

@@ -83,10 +83,11 @@ pre[class*="language-"] {
 	font-family: monospace !important;
 }
 
-.is-style-mega-hr,
+.is-style-mega-hr, // the regular is a efault this can probably become that
 .mega-hr { // this might be able to become a gutenberg style in for most places
 	border-bottom-width: 0.5em;
-	border-color: $white;
+	// border-color: $white; // this was the case but it should be something that can be seen on the regular background and then changed when needed
+	border-color: $dark-gray;
 	border-style: solid;
 
 	@media (min-width: map-get($breakpoints, medium)) {

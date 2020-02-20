@@ -1,19 +1,7 @@
-{{!-- {{#if searchForm }}
-<form method="post" action="{{ url }}" role="search" class="c-search-form {{ styleModifier }}">
+<form class="searchform">
 
-	{{#each searchLabel }}
-	<label for="search" class="c-search-form__label is-vishidden {{ styleModifier }}">{{{ label }}}</label>
-	{{/ each }}
+	<label class="screen-reader-text" for="s">Search for:</label>
+	<input type="search" value name="s" id="s" />
+	<input type="submit" id="searchsubmit" value="Search">
 
-	<div class="c-search-form__body">
-
-		<input type="search" id="search" class="c-search-form__input" placeholder="{{ placeholder }}" value="{{ searchValue }}" />
-
-		{{# searchFormButton }}
-			{{> molecules-button }}
-		{{/ searchFormButton }}
-
-	</div>
-
-</form><!-- end c-search -->
-{{/ if }} --}}
+</form>
