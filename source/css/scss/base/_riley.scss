@@ -42,9 +42,12 @@ body {
 }
 
 .site-branding-text {
-    @media (min-width: map-get($breakpoints, medium)) {
+
+
+    // @media (min-width: map-get($breakpoints, medium)) {
 		writing-mode: vertical-rl;
-    }
+		justify-self: center;
+    // }
     // color: $white; // not needed as it get's overwritten by the a
     // font-size: 2em; // these keep getting overwritten its needs to be sorted out
     background: black; // adding this incase we dont have images the text is still visible // true black for the screen blend to not show anything
@@ -58,6 +61,8 @@ body {
 }
 
 .single .site-branding-text {
+	writing-mode: initial;
+
     a {
         color: $black;
         padding: initial;
@@ -68,12 +73,15 @@ body {
 .navigation-top ul { // does this need to be told to be a flex?
 	// flex-direction: column;
 	padding-left: 0;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
 
-    /*
 	@media (min-width: map-get($breakpoints, medium)) {
 		// padding-left: $global-padding;
+		flex-direction: row;
+		justify-content: space-between;
     }
-    */
 }
 
 .navigation-top ul li {
@@ -504,6 +512,7 @@ add these back in when I figure out which are good
         ul {
 			display: flex;
 			// align-content: space-between;
+			margin-top: 0; // browser reset
         }
 
         li {
@@ -538,12 +547,13 @@ add these back in when I figure out which are good
 
 .spine {
 	grid-column: 3;
-	grid-row: 2;
+	grid-row: 2/4;
     writing-mode: vertical-rl;
     justify-self: center; // match header-logo
 	// place-self: end; might need only bigger
 
 	@media (min-width: map-get($breakpoints, medium)) {
+		grid-row: 2;
         grid-column: 5;
         align-self: end;
         // margin-bottom: $global-margin*2; // match the base of the image
@@ -566,10 +576,10 @@ add these back in when I figure out which are good
 // ------------------------------------------
 
 .site-footer {
-	width: calc(100% - 4rem);
-	max-width: 73rem; // keeps inside of the margins
+	width: calc(100% - 6rem);
+	max-width: 71rem; // keeps inside of the margins
 	margin: 0 auto;
-	padding: $global-padding 0;
+	// padding: $global-padding 0;
 	// align-items: end; Why am I pushing down?
 
 	@media (min-width: map-get($breakpoints, medium)) {
@@ -588,8 +598,11 @@ add these back in when I figure out which are good
     margin-bottom: $global-margin*2;
 
 	@media (min-width: map-get($breakpoints, medium)) {
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 	}
+
+
+		padding-left: 0;
 }
 
 .footer_info {
@@ -620,8 +633,8 @@ add these back in when I figure out which are good
 // ------------------------------------------
 
 .front-page-titles {
-    width: 100%;
-    max-width: 73rem;
+    width: calc(100% - 6rem);
+    max-width: 71rem;
     margin: 0 auto;
     display: grid;
     grid-gap: $global-grid-gap/2;
@@ -640,6 +653,11 @@ add these back in when I figure out which are good
 	}
 }
 
+#bottom-menu {
+	padding-left: 0; // browser rest
+	margin: 0;
+}
+
 // more ogranisms
 // ------------------------------------------
 
@@ -650,7 +668,7 @@ add these back in when I figure out which are good
 .site-main article, // this isnt working for some reason?
 .site-main_article
 { /* running wordpress post class prevents using a straight clasee */
-	width: 100%;
+	width: calc(100% - 2rem); // slightly different so the sid bar fits
 	max-width: $page-width;
 	margin: 0 auto;
 
@@ -658,7 +676,8 @@ add these back in when I figure out which are good
 	grid-gap: $global-grid-gap;
 	padding-top: $global-padding*2;
 
-	grid-template-columns: 4px 1fr 4fr 4fr 1fr 4px;
+	grid-template-columns: 4px 1fr 4fr 4fr 1fr 4px; // why 4px?
+	grid-template-columns: 1rem 1fr 1rem; // why 4px?
 	// maybe this should be to match the header and footer grid atleast at large sizes 2em 1fr 2fr 2fr 1fr 2em
 
 	@media (min-width: map-get($breakpoints, medium)) {
@@ -667,9 +686,15 @@ add these back in when I figure out which are good
 }
 
 .spine-border {
-    grid-row: 1/7;
+    grid-row: 1/3;
     grid-column: 1;
-    // z-index: 15; // what am I gowing over the top of?
+	z-index: 15; // over the top of categories on single
+	justify-self: end;
+	
+	@media (min-width: map-get($breakpoints, medium)) {
+		grid-row: 1/7;
+		justify-self: start; // categories takes up that space as well
+	}
 }
 
 .single .spine-border {
@@ -679,7 +704,7 @@ add these back in when I figure out which are good
 }
 
 .fp-header {
-	grid-column: 2 / 6;
+	grid-column: 2;
 	// align-self: end;
 
 	@media (min-width: map-get($breakpoints, medium)) {
@@ -688,7 +713,8 @@ add these back in when I figure out which are good
 }
 
 .article-content {
-	grid-column: 2 / 6;
+	grid-column: 2;
+	margin-bottom: $global-margin*3;
 
 	@media (min-width: map-get($breakpoints, medium)) {
 		grid-column: 3 / 5;
@@ -732,6 +758,10 @@ add these back in when I figure out which are good
 	a {
 		color: $dark-gray;
 	}
+
+	ul {
+		padding-left: 0; // browser reset
+	}
 }
 
 .single .article-category {
@@ -746,6 +776,7 @@ add these back in when I figure out which are good
 }
 
 .article-base {
+	width: 100%;
     max-width: $page-width;
 	margin: $global-margin*3 auto 0 auto; // top right bottom left
 	display: grid;
