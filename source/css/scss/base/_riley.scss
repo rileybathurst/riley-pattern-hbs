@@ -685,20 +685,21 @@ add these back in when I figure out which are good
 .site-main article, // this isnt working for some reason?
 .site-main_article
 { /* running wordpress post class prevents using a straight clasee */
-	width: calc(100% - 2rem); // slightly different so the sid bar fits
-	max-width: $page-width;
+	width: calc(100% - 6rem); // slightly different so the sid bar fits
+	max-width: 71rem;
 	margin: 0 auto;
 
 	display: grid;
 	grid-gap: $global-grid-gap;
 	padding-top: $global-padding*2;
 
-	grid-template-columns: 4px 1fr 4fr 4fr 1fr 4px; // why 4px?
+	// grid-template-columns: 4px 1fr 4fr 4fr 1fr 4px; // why 4px?
 	grid-template-columns: 1rem 1fr 1rem; // why 4px?
 	// maybe this should be to match the header and footer grid atleast at large sizes 2em 1fr 2fr 2fr 1fr 2em
 
 	@media (min-width: map-get($breakpoints, medium)) {
-		grid-template-columns: 2em 1fr 4fr 4fr 1fr 2em;
+		// grid-template-columns: 2em 1fr 4fr 4fr 1fr 2em;
+		grid-template-columns: repeat(6, 1fr); // slightly more complex to fit with the rest of the page grid
 	}
 }
 
@@ -721,6 +722,8 @@ add these back in when I figure out which are good
     /* @media (min-width: map-get($breakpoints, medium)) {
 		// grid-row: 1/6;
 	} */
+	grid-column: 1;
+
 	@media (min-width: map-get($breakpoints, medium)) {
 		grid-row: 1/7;
 		justify-self: start; // categories takes up that space as well
@@ -732,7 +735,7 @@ add these back in when I figure out which are good
 	// align-self: end;
 
 	@media (min-width: map-get($breakpoints, medium)) {
-		grid-column: 3 / 5;
+		grid-column: 2 / 6;
 	}
 }
 
@@ -741,7 +744,7 @@ add these back in when I figure out which are good
 	margin-bottom: $global-margin;
 
 	@media (min-width: map-get($breakpoints, medium)) {
-		grid-column: 3 / 5;
+		grid-column: 2 / 6;
 		margin-bottom: $global-margin*3;
 	}
 }
@@ -754,7 +757,7 @@ add these back in when I figure out which are good
 	grid-column: 2;
 
 	@media (min-width: map-get($breakpoints, medium)) {
-		grid-column: 3 / 5;
+		grid-column: 2 / 6;
 	}
 }
 
@@ -796,10 +799,12 @@ add these back in when I figure out which are good
 	@media (min-width: map-get($breakpoints, medium)) {
 		grid-row: 1 / 5;
 		align-self: start;
+		grid-column: 1;
 	}
 
 	h3 {
 		margin: 0;
+		grid-column: 1;
 	}
 }
 
