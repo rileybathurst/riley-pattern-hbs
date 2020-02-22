@@ -137,7 +137,13 @@ textarea {
 	font-weight: bold;
 	padding: $global-padding;
 	border-radius: 2px;
-	// width: calc(100% - 3em); // this is causing all sorts of problems especially with the post comment button
+
+	// width: calc(100% - 4em);
+	width: calc(100% - 2em);
+
+	@media (min-width: map-get($breakpoints, medium)) {
+		width: calc(100% - 2em); // this is causing all sorts of problems especially with the post comment button // was causing problems?
+	}
 }
 
 input:focus,
@@ -180,7 +186,9 @@ input[type=search]:focus { // from webpackbuild as its already compiled
 	border-top-right-radius: 2px;
 	border-bottom-right-radius: 2px;
 
-	width: 100%; // can I overwrite input from above so this actually works?
+	// width: 100%; // can I overwrite input from above so this actually works? // do we need this as an overwrite?
+	width: auto;
+	// max-width: calc(100% - 4rem);
 
 	// this is an update from the site
 	font-size: 1.25em;
