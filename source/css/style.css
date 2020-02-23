@@ -1193,6 +1193,7 @@ body {
 }
 
 .navigation-top ul {
+  margin: 0;
   padding-left: 0;
 }
 
@@ -1421,7 +1422,6 @@ body {
 @media (min-width: 640px) {
   .header-logo {
     align-self: end;
-    justify-self: center;
     grid-column: 5;
   }
 }
@@ -1697,7 +1697,7 @@ add these back in when I figure out which are good
 .site-main article,
 .site-main_article {
   /* running wordpress post class prevents using a straight clasee */
-  width: calc(100% - 6rem);
+  width: calc(100% - 2rem);
   max-width: 71rem;
   margin: 0 auto;
   display: grid;
@@ -1708,6 +1708,7 @@ add these back in when I figure out which are good
 @media (min-width: 640px) {
   .site-main article,
 .site-main_article {
+    width: calc(100% - 6rem);
     grid-template-columns: repeat(6, 1fr);
   }
 }
@@ -1948,6 +1949,7 @@ add these back in when I figure out which are good
 }
 
 .category-sub {
+  width: calc(100% - 6rem);
   max-width: 77rem;
   margin: 0 auto;
   margin-bottom: 1rem;

@@ -72,6 +72,7 @@ body {
 // -----------------------------------------------
 .navigation-top ul { // does this need to be told to be a flex?
 	// flex-direction: column;
+	margin: 0; // browser reset
 	padding-left: 0;
 }
 
@@ -346,7 +347,7 @@ body {
 // fix this
     @media (min-width: map-get($breakpoints, medium)) { // this needs to be sorted out
         align-self: end; // this is for when the menu is horizontal on single pages
-        justify-self: center;
+        // justify-self: center;
         grid-column: 5;
     }
     
@@ -654,7 +655,7 @@ add these back in when I figure out which are good
     max-width: 71rem;
     margin: 0 auto;
     display: grid;
-    grid-gap: $global-grid-gap/2;
+    grid-gap: $global-grid-gap/2; // double the grip half the gap
     grid-template-columns: repeat(6, 1fr);
     background: $white;
     padding-left: 1rem;
@@ -685,7 +686,7 @@ add these back in when I figure out which are good
 .site-main article, // this isnt working for some reason?
 .site-main_article
 { /* running wordpress post class prevents using a straight clasee */
-	width: calc(100% - 6rem); // slightly different so the sid bar fits
+	width: calc(100% - 2rem); // slightly different so the sid bar fits
 	max-width: 71rem;
 	margin: 0 auto;
 
@@ -698,6 +699,7 @@ add these back in when I figure out which are good
 	// maybe this should be to match the header and footer grid atleast at large sizes 2em 1fr 2fr 2fr 1fr 2em
 
 	@media (min-width: map-get($breakpoints, medium)) {
+		width: calc(100% - 6rem); // slightly different so the sid bar fits
 		// grid-template-columns: 2em 1fr 4fr 4fr 1fr 2em;
 		grid-template-columns: repeat(6, 1fr); // slightly more complex to fit with the rest of the page grid
 	}
@@ -942,6 +944,7 @@ add these back in when I figure out which are good
 }
 
 .category-sub {
+	width: calc(100% - 6rem);
 	max-width: $page-width;
 	margin: 0 auto;
 	margin-bottom: $global-margin;
