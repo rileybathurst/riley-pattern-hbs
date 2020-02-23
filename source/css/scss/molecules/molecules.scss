@@ -114,6 +114,14 @@
   # CATEGORY PAGE
 \*------------------------------------*/
 
+.cat-title {
+    grid-column: 2;
+
+    @media (min-width: map-get($breakpoints, medium)) {
+        grid-column: 2/6;
+    }
+}
+
 .category-sub {
     width: calc(100% - 6rem);
     max-width: $page-width;
