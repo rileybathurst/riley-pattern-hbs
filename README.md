@@ -16,3 +16,11 @@ Building this up in an atomic design way, theres a bunch to clean up in this the
 ## To do
 
 - Theres some problems with the main grids that need to be sorted in an easier way, this might just be doing a version somewhere that has nothing but color blocks in the grid
+
+### Style Guide
+
+Until I get my own sorted better [https://cssguidelin.es](https://cssguidelin.es)
+
+- 2 spaces
+- Never use 3 margins or padding
+- never leave empty html elements <!-- stay gold -->

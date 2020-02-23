@@ -9,6 +9,7 @@
 /**
  * Input placeholder text base styles
  */
+ /*
 ::-webkit-input-placeholder {
 	color: $color-form-placeholder;
 }
@@ -19,7 +20,7 @@
 
 :-ms-input-placeholder {
 	color: $color-form-placeholder;
-}
+} */
 
 /**
  * Fieldset base styles
@@ -43,7 +44,7 @@ legend {
 label {
 	display: block;
 	padding-bottom: 0.25rem;
-	color: $color-form-label;
+	// color: $color-form-label;
 }
 
 /**
@@ -54,7 +55,7 @@ input,
 select,
 textarea {
 	font-family: inherit;
-	font-size: $font-size-med;
+	// font-size: $font-size-med;
 	margin: 0;
 }
 
@@ -72,12 +73,12 @@ input,
 textarea {
 	// width: 100%; I dont have this
 	padding: 0.5rem;
-	border: $border-width solid $color-form-border;
-	background: $color-form-bg;
+	// border: $border-width solid $color-form-border;
+	// background: $color-form-bg;
 
-	&:focus {
-		border-color: $color-form-border-focus;
-	}
+/* 	&:focus {
+		// border-color: $color-form-border-focus;
+	} */
 }
 
 /**
@@ -101,7 +102,7 @@ input[type="checkbox"],
 input[type="radio"] {
 	width: auto;
 	margin-right: 0.3rem;
-	border-color: $color-form-border;
+	// border-color: $color-form-border;
 }
 
 /**
@@ -116,6 +117,7 @@ input[type="search"] {
  * Select
  * 1) Remove default styling
  */
+ /*
 select {
 	display: block;
 	font-size: $font-size-med;
@@ -128,7 +130,7 @@ select {
 	&:focus {
 		border-color: $color-form-border-focus;
 	}
-}
+} */
 
 // was .comment-form input, .comment-form textarea but those are base
 input,

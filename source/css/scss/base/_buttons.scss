@@ -48,7 +48,7 @@ button:hover {
 	// background: $white; // this is overwritten by the regular button which is kinda dumb
 	border-right: .1em solid $primary-color; // global?
 	border-bottom: .1em solid $primary-color;
-	border-bottom-right-radius: 3px;
+	border-bottom-right-radius: 3px; // standardize this
 }
 
 .article-content .button:hover,

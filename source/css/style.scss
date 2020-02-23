@@ -17,6 +17,12 @@
 @import "scss/abstracts/colors";
 
 /*------------------------------------*\
+    #TESTING
+\*------------------------------------*/
+@import "scss/utilities/pattern"; // has to be below the variables
+// @import "scss/utilities/testcolors"; // this will generally be off but it helps to know what is where
+
+/*------------------------------------*\
     #BASE
 \*------------------------------------*/
 @import "scss/base/reset";
@@ -31,6 +37,20 @@
 @import "scss/base/text";
 @import "scss/base/_text"; // are these different?
 @import "scss/base/table";
+
+/*------------------------------------*\
+    #MOLECULES
+\*------------------------------------*/
+
+@import "scss/molecules/header";
+@import "scss/molecules/footer";
+@import "scss/molecules/molecules";
+
+/*------------------------------------*\
+    #ORGANISMS
+\*------------------------------------*/
+
+@import "scss/organisms/organisms";
 
 /*------------------------------------*\
     #LAYOUT

@@ -55,11 +55,29 @@
  * Neutral Colors
  * 1) Neutral colors are grayscale values used throughout the UI
  */
+/*
+$color-neutral-white: #fff;
+$color-neutral-gray-02: #f9f9f9;
+$color-neutral-gray-07: #eee;
+$color-neutral-gray-13: #ddd;
+$color-neutral-gray-27: #bbb;
+$color-neutral-gray-50: #808080;
+$color-neutral-gray-60: #666;
+$color-neutral-gray-73: #444;
+$color-neutral-gray-93: #131313;
+$color-neutral-black: #000;
+*/
 /**
  * Utility Colors
  * 1) Utility colors are colors used to provide feedback, such as alert messages,
  *    form validation, etc.
  */
+/*
+$color-utility-info: #0192d0;
+$color-utility-error: #b12a0b;
+$color-utility-success: #03804d;
+$color-utility-warning: #a59b15;
+*/
 /*------------------------------------*\
     #TYPOGRAPHY
 \*------------------------------------*/
@@ -69,6 +87,14 @@
 /**
  * Font Sizing
  */
+/*
+$font-size-sm: 0.75rem;
+$font-size-sm-2: 0.85rem;
+$font-size-med: 1rem;
+$font-size-med-2: 1.2rem;
+$font-size-large: 2rem;
+$font-size-xl: 3rem;
+*/
 h1 {
   font-size: 3.052em;
   line-height: 1.15;
@@ -77,6 +103,14 @@ h1 {
 /**
  * Line Height
  */
+/*
+$line-height-sm: 0.8;
+$line-height-sm-2: 0.9;
+$line-height-med: 1;
+$line-height-med-2: 1.2;
+$line-height-large: 1.6;
+$line-height-xl: 1.8;
+*/
 /*------------------------------------*\
     #LAYOUT
 \*------------------------------------*/
@@ -115,6 +149,12 @@ h1 {
  * Breakpoints used in media queries
  * 1) These are not the only breakpoints used, but they provide a few defaults
  */
+/*
+$bp-small: 28em;
+$bp-med: 47em;
+$bp-large: 60em;
+$bp-xl: 70em;
+*/
 /*------------------------------------*\
     #MIXINS
 \*------------------------------------*/
@@ -122,21 +162,55 @@ h1 {
  * Body Styles 
  * 1) Prevent Mobile Safari from scaling up text: https://blog.55minutes.com/2012/04/iphone-text-resizing/
  */
+/* @mixin typographyBody() {
+	font-size: $font-size-med;
+	line-height: 1.6;
+	-webkit-text-size-adjust: 100%; // 1
+} */
 /**
  * XL Type Styles
  */
+/*
+@mixin typographyBodyLarge() {
+	font-size: $font-size-med-2;
+	line-height: $line-height-large;
+} */
 /**
  * XL Heading Styles
  */
+/*
+@mixin h1() {
+	font-size: $font-size-xl;
+	font-weight: normal;
+	line-height: 1.15;
+} */
 /**
  * Large Heading Styles
  */
+/*
+@mixin typographyHeadingLarge() {
+	font-size: $font-size-large;
+	font-weight: normal;
+	line-height: 1.2;
+} */
 /**
  * Medium 2 Heading Styles
  */
+/*
+@mixin typographyHeadingMed2() {
+	font-size: $font-size-med-2;
+	font-weight: normal;
+	line-height: 1.2;
+} */
 /**
  * Medium Heading Styles
  */
+/*
+@mixin typographyHeadingMed() {
+	font-size: $font-size-med;
+	font-weight: normal;
+	line-height: 1.2;
+} */
 /*------------------------------------*\
     #COLORS
 \*------------------------------------*/
@@ -161,6 +235,9 @@ h1 {
 \*------------------------------------*/
 /*------------------------------------*\
     #FORMS
+\*------------------------------------*/
+/*------------------------------------*\
+    #TESTING
 \*------------------------------------*/
 /*------------------------------------*\
     #BASE
@@ -189,6 +266,10 @@ html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, 
 header, footer, nav, section, article, figure {
 	display: block;
 } */
+figure {
+  margin: 0;
+}
+
 /*------------------------------------*\
     #BODY
 \*------------------------------------*/
@@ -208,15 +289,7 @@ html {
  *    This is used to achieve a sticky footer
  */
 body {
-  min-height: 100vh;
-  /* 1 */
   font-family: "HelveticaNeue", "Helvetica", "Arial", sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-text-size-adjust: 100%;
-  /* 1 */
-  background-color: #fff;
-  color: #131313;
 }
 
 /*------------------------------------*\
@@ -227,17 +300,19 @@ body {
  */
 a {
   color: #c22127;
+  /*
+  	&:active {
+  		color: $color-links-active;
+  		text-decoration: line-through;
+  	}
+
+  	&:visited {
+  		color: $color-links-visited;
+  		text-decoration: line-through;
+  	} */
 }
 a:hover, a:focus {
   color: #8a0000;
-  text-decoration: line-through;
-}
-a:active {
-  color: #131313;
-  text-decoration: line-through;
-}
-a:visited {
-  color: #131313;
   text-decoration: line-through;
 }
 
@@ -300,18 +375,18 @@ small, .text_small {
 /**
  * Input placeholder text base styles
  */
+/*
 ::-webkit-input-placeholder {
-  color: #808080;
+	color: $color-form-placeholder;
 }
 
 ::-moz-placeholder {
-  color: #808080;
+	color: $color-form-placeholder;
 }
 
 :-ms-input-placeholder {
-  color: #808080;
-}
-
+	color: $color-form-placeholder;
+} */
 /**
  * Fieldset base styles
  */
@@ -334,7 +409,6 @@ legend {
 label {
   display: block;
   padding-bottom: 0.25rem;
-  color: #131313;
 }
 
 /**
@@ -345,7 +419,6 @@ input,
 select,
 textarea {
   font-family: inherit;
-  font-size: 1rem;
   margin: 0;
 }
 
@@ -362,12 +435,9 @@ textarea {
 input,
 textarea {
   padding: 0.5rem;
-  border: 1px solid #444;
-  background: #fff;
-}
-input:focus,
-textarea:focus {
-  border-color: #131313;
+  /* 	&:focus {
+  		// border-color: $color-form-border-focus;
+  	} */
 }
 
 /**
@@ -390,7 +460,6 @@ input[type=checkbox],
 input[type=radio] {
   width: auto;
   margin-right: 0.3rem;
-  border-color: #444;
 }
 
 /**
@@ -405,19 +474,20 @@ input[type=search] {
  * Select
  * 1) Remove default styling
  */
+/*
 select {
-  display: block;
-  font-size: 1rem;
-  width: 100%;
-  border: 1px solid #444;
-  padding: 0.5rem;
-  background: #fff;
-  color: #131313;
-}
-select:focus {
-  border-color: #131313;
-}
+	display: block;
+	font-size: $font-size-med;
+	width: 100%;
+	border: $border-width solid $color-form-border;
+	padding: 0.5rem;
+	background: $color-form-bg;
+	color: $color-form;
 
+	&:focus {
+		border-color: $color-form-border-focus;
+	}
+} */
 input,
 textarea {
   border: 0.1em solid #cacaca;
@@ -583,44 +653,43 @@ svg {
 /**
  * Paragraph base styles
  */
-p {
-  margin-bottom: 1rem;
-}
-
+/* p {
+	margin-bottom: $spacing;
+} */
 /**
  * Blockquote base styles
  */
+/*
 blockquote {
-  font-style: italic;
-  border-left: 1px solid #808080;
-  color: #808080;
-  padding-left: 1rem;
-  margin-bottom: 1rem;
-}
-
+	font-style: italic;
+	border-left: 1px solid $color-neutral-gray-50;
+	color: $color-neutral-gray-50;
+	padding-left: 1rem;
+	margin-bottom: $spacing;
+} */
 /**
  * Horizontal rule base styles
  */
+/*
 hr {
-  border: 0;
-  height: 1px;
-  background: #808080;
-  margin: 1rem 0;
-}
-
+	border: 0;
+	height: 1px;
+	background: $color-neutral-gray-50;
+	margin: 1rem 0;
+} */
 /**
  * Selection styles
  */
-::-moz-selection {
-  color: #131313;
-  background: #ddd;
-  /* Gecko Browsers */
+.text__selection ::selection {
+  background: #c22127;
 }
 
-.text__selection ::selection {
-  color: #131313;
-  background: #ddd;
-  /* WebKit/Blink Browsers */
+a::selection {
+  color: #fefefe;
+}
+
+.text-center {
+  text-align: center;
 }
 
 /**
@@ -628,8 +697,6 @@ hr {
  */
 code {
   display: inline-block;
-  background: #f9f9f9;
-  border: 1px solid #ddd;
   padding: 0.2rem 0.5rem;
   line-height: 1.2;
   font-size: 0.85rem;
@@ -639,9 +706,6 @@ code {
  * Preformatted text base styles
  */
 pre {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  font-size: 1rem;
   padding: 1rem;
   overflow-x: auto;
   /**
@@ -672,6 +736,43 @@ pre[class*=language-] {
 .mega-hr {
     border-bottom-width: 1em;
   }
+}
+
+/*--------------------------------------------------------------
+2.0 Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. These are the wordpress twentyseventeen option for the default places its needed */
+.screen-reader-text, .comment-reply-title {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus, .comment-reply-title:focus {
+  background-color: #f1f1f1;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
 }
 
 /*------------------------------------*\
@@ -680,44 +781,43 @@ pre[class*=language-] {
 /**
  * Paragraph base styles
  */
-p {
-  margin-bottom: 1rem;
-}
-
+/* p {
+	margin-bottom: $spacing;
+} */
 /**
  * Blockquote base styles
  */
+/*
 blockquote {
-  font-style: italic;
-  border-left: 1px solid #808080;
-  color: #808080;
-  padding-left: 1rem;
-  margin-bottom: 1rem;
-}
-
+	font-style: italic;
+	border-left: 1px solid $color-neutral-gray-50;
+	color: $color-neutral-gray-50;
+	padding-left: 1rem;
+	margin-bottom: $spacing;
+} */
 /**
  * Horizontal rule base styles
  */
+/*
 hr {
-  border: 0;
-  height: 1px;
-  background: #808080;
-  margin: 1rem 0;
-}
-
+	border: 0;
+	height: 1px;
+	background: $color-neutral-gray-50;
+	margin: 1rem 0;
+} */
 /**
  * Selection styles
  */
-::-moz-selection {
-  color: #131313;
-  background: #ddd;
-  /* Gecko Browsers */
+.text__selection ::selection {
+  background: #c22127;
 }
 
-.text__selection ::selection {
-  color: #131313;
-  background: #ddd;
-  /* WebKit/Blink Browsers */
+a::selection {
+  color: #fefefe;
+}
+
+.text-center {
+  text-align: center;
 }
 
 /**
@@ -725,8 +825,6 @@ hr {
  */
 code {
   display: inline-block;
-  background: #f9f9f9;
-  border: 1px solid #ddd;
   padding: 0.2rem 0.5rem;
   line-height: 1.2;
   font-size: 0.85rem;
@@ -736,9 +834,6 @@ code {
  * Preformatted text base styles
  */
 pre {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  font-size: 1rem;
   padding: 1rem;
   overflow-x: auto;
   /**
@@ -769,6 +864,43 @@ pre[class*=language-] {
 .mega-hr {
     border-bottom-width: 1em;
   }
+}
+
+/*--------------------------------------------------------------
+2.0 Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. These are the wordpress twentyseventeen option for the default places its needed */
+.screen-reader-text, .comment-reply-title {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus, .comment-reply-title:focus {
+  background-color: #f1f1f1;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
 }
 
 /*------------------------------------*\
@@ -798,363 +930,44 @@ tr {
 }
 
 /*------------------------------------*\
-    #LAYOUT
+    #MOLECULES
 \*------------------------------------*/
 /*------------------------------------*\
-    #LAYOUT
+  #HEADER
 \*------------------------------------*/
-/**
- *
- * 1) This caps the width of text passages
- *    to achieve a comfortable line length
- */
-.l-linelength-container {
-  max-width: 36rem;
+.fp-box {
+  background: #c22127;
+  color: #fefefe;
+  text-align: center;
+  font-weight: bold;
+  padding: 1rem 0;
 }
 
-/*------------------------------------*\
-    #GRID
-\*------------------------------------*/
-/*------------------------------------*\
-    #UTILITIES
-\*------------------------------------*/
-/*------------------------------------*\
-    #VISIBILITY CLASSES
-\*------------------------------------*/
-/**
- * Is Hidden
- * 1) Completely remove from the flow and screen readers.
- */
-.u-is-hidden {
-  display: none !important;
-  visibility: hidden !important;
+.spine-border {
+  border-left: 4px solid #c22127;
+  padding-top: 3rem;
 }
 
-/**
- * Is Visibly Hidden
- * 1) Completely remove from the flow but leave available to screen readers.
- */
-.u-is-vishidden {
-  position: absolute !important;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
+.page-title {
+  margin: 0;
+  font-size: 2em;
+  border: 0.2em solid #c22127;
+  padding: 2rem;
+  color: #c22127;
+  word-wrap: break-word;
+  text-align: center;
 }
-
-/*------------------------------------*\
-    #SPACING
-\*------------------------------------*/
-/**
- * Margin bottom none
- * 1) Force margin bottom of 0
- */
-.u-margin-bottom-none {
-  margin-bottom: 0 !important;
-}
-
-/**
- * Margin bottom small
- * 1) Force margin bottom of $spacing-small variable
- */
-.u-margin-bottom-small {
-  margin-bottom: 1rem !important;
-}
-
-/**
- * Margin bottom
- * 1) Force margin bottom of $spacing variable
- */
-.u-margin-bottom {
-  margin-bottom: 1rem !important;
-}
-
-/**
- * Margin bottom large
- * 1) Force margin bottom of $spacing-large variable
- */
-.u-margin-bottom-large {
-  margin-bottom: 2rem !important;
-}
-
-.u-margin-bottom-large-to-xxl {
-  margin-bottom: 2rem !important;
-}
-@media all and (min-width: 60em) {
-  .u-margin-bottom-large-to-xxl {
-    margin-bottom: 8rem !important;
+@media (min-width: 640px) {
+  .page-title {
+    font-size: 3em;
   }
 }
 
-/**
- * Margin top none
- * 1) Force margin top of 0
- */
-.u-margin-top-none {
-  margin-top: 0 !important;
+.article-date {
+  color: #8a8a8a;
+  margin-top: 0;
 }
 
-/**
- * Margin top small
- * 1) Force margin top of $spacing-small variable
- */
-.u-margin-top-small {
-  margin-top: 1rem !important;
-}
-
-/**
- * Margin top
- * 1) Force margin top of $spacing variable
- */
-.u-margin-top {
-  margin-top: 1rem !important;
-}
-
-/**
- * Margin top large
- * 1) Force margin top of $spacing-large variable
- */
-.u-margin-top-large {
-  margin-top: 2rem !important;
-}
-
-.u-margin-top-booking {
-  margin-top: 28rem !important;
-}
-
-/**
- * Margin right none
- * 1) Force margin right of 0
- */
-.u-margin-right-none {
-  margin-right: 0 !important;
-}
-
-/**
- * Margin right small
- * 1) Force margin right of $spacing-small variable
- */
-.u-margin-right-small {
-  margin-right: 1rem !important;
-}
-
-/**
- * Margin right
- * 1) Force margin right of $spacing variable
- */
-.u-margin-right {
-  margin-right: 1rem !important;
-}
-
-/**
- * Margin right large
- * 1) Force margin right of $spacing-large variable
- */
-.u-margin-right-large {
-  margin-right: 2rem !important;
-}
-
-/**
- * Margin left none
- * 1) Force margin left of 0
- */
-.u-margin-left-none {
-  margin-left: 0 !important;
-}
-
-/**
- * Margin left small
- * 1) Force margin left of $spacing-small variable
- */
-.u-margin-left-small {
-  margin-left: 1rem !important;
-}
-
-/**
- * Margin left
- * 1) Force margin left of $spacing variable
- */
-.u-margin-left {
-  margin-left: 1rem !important;
-}
-
-/**
- * Margin left large
- * 1) Force margin left of $spacing-large variable
- */
-.u-margin-left-large {
-  margin-left: 2rem !important;
-}
-
-/**
- * Center display block contents
- */
-.u-margin-center {
-  margin: 0 auto !important;
-}
-
-/**
- * Padding none
- */
-.u-padding-none {
-  padding: 0 !important;
-}
-
-/**
- * Padding small
- */
-.u-padding-small {
-  padding: 1rem !important;
-}
-
-/**
- * Padding
- */
-.u-padding {
-  padding: 1rem !important;
-}
-
-/**
- * Padding large
- */
-.u-padding-large {
-  padding: 2rem !important;
-}
-
-/**
- * Padding top none
- */
-.u-padding-top-none {
-  padding-top: 0 !important;
-}
-
-/**
- * Padding top small
- */
-.u-padding-top-small {
-  padding-top: 1rem !important;
-}
-
-/**
- * Padding top
- */
-.u-padding-top {
-  padding-top: 1rem !important;
-}
-
-/**
- * Padding top large
- */
-.u-padding-top-large {
-  padding-top: 2rem !important;
-}
-
-/**
- * Padding bottom none
- */
-.u-padding-bottom-none {
-  padding-bottom: 0 !important;
-}
-
-/**
- * Padding bottom small
- */
-.u-padding-bottom-small {
-  padding-bottom: 1rem !important;
-}
-
-/**
- * Padding bottom
- */
-.u-padding-bottom {
-  padding-bottom: 1rem !important;
-}
-
-/**
- * Padding bottom large
- */
-.u-padding-bottom-large {
-  padding-bottom: 2rem !important;
-}
-
-/**
- * Padding right none
- */
-.u-padding-right-none {
-  padding-right: 0 !important;
-}
-
-/**
- * Padding right small
- */
-.u-padding-right-small {
-  padding-right: 1rem !important;
-}
-
-/**
- * Padding right
- */
-.u-padding-right {
-  padding-right: 1rem !important;
-}
-
-/**
- * Padding right large
- */
-.u-padding-right-large {
-  padding-right: 2rem !important;
-}
-
-/**
- * Padding left none
- */
-.u-padding-left-none {
-  padding-left: 0 !important;
-}
-
-/**
- * Padding left small
- */
-.u-padding-left-small {
-  padding-left: 1rem !important;
-}
-
-/**
- * Padding left
- */
-.u-padding-left {
-  padding-left: 1rem !important;
-}
-
-/**
- * Padding left large
- */
-.u-padding-left-large {
-  padding-left: 2rem !important;
-}
-
-/*------------------------------------*\
-    #COMPONENTS
-\*------------------------------------*/
-.stay-gold {
-  min-height: 50px;
-}
-
-.text-center {
-  text-align: center;
-}
-
-/*
-body {
-    // tiny screens can look bad in the header
-    // unless we do a super small screensize
-    // line-break: anywhere; but it has to only be on specific text
-	@media (min-width: map-get($breakpoints, medium)) {
-        line-break: initial;
-    }
-} */
 .breadcrumbs {
   writing-mode: vertical-rl;
 }
@@ -1267,40 +1080,27 @@ body {
   margin-right: 1rem;
 }
 
-.fp-box {
-  background: #c22127;
-  color: #fefefe;
-  text-align: center;
+.footer_menu li {
+  border: 0.25em solid #c22127;
+  padding: 1rem;
   font-weight: bold;
-  padding: 1rem 0;
 }
 
-.spine-border {
-  border-left: 4px solid #c22127;
-  padding-top: 3rem;
-}
-
-.page-title {
-  margin: 0;
-  font-size: 2em;
-  border: 0.2em solid #c22127;
-  padding: 2rem;
-  color: #c22127;
-  word-wrap: break-word;
-  text-align: center;
-}
-@media (min-width: 640px) {
-  .page-title {
-    font-size: 3em;
-  }
-}
-
-.article-date {
-  font-size: 2em;
-  color: #8a8a8a;
-  margin: 0.1em 0;
-}
-
+/*------------------------------------*\
+  #MOLECULES
+\*------------------------------------*/
+/**
+ * ARTICLE_BASE
+ *
+ * PAGINATION
+ *
+ * COMMENTS
+ *
+ * CATEGORY PAGE
+*/
+/*------------------------------------*\
+  # ARTICLE-BASE
+\*------------------------------------*/
 .post-navigation {
   grid-column: 2;
   margin-right: 3rem;
@@ -1325,36 +1125,24 @@ body {
   display: block;
 }
 
+/*------------------------------------*\
+  # PAGINATION
+\*------------------------------------*/
 .pagination {
   max-width: 77rem;
   margin: 3rem;
-  /* @media (min-width: map-get($breakpoints, medium)) {
-  	margin: 3rem auto;
-  	// display: grid; // trying to line up with other content on the page but I might be able to do that in other ways
-  	// grid-gap: $global-grid-gap;
-  	// grid-template-columns: 2em 1fr 4fr 1fr 2em; // fix this its not getting used well at all
-  } */
 }
 
-/*	grid-column: 1 / 3;
-
-	@media (min-width: map-get($breakpoints, large)) {
-		grid-column: 3 / span 4;
-	}
-} */
 .pagination .nav-links {
-  /* @media (min-width: map-get($breakpoints, medium)) {
-  	grid-column: 2 / 5; // this is sloppy and ugly
-  } */
   display: flex;
   justify-content: center;
-  /* @media (min-width: map-get($breakpoints, large)) {
-  	grid-column: 3;
-  } */
 }
 
-.pagination .nav-links .next, .pagination .nav-links .prev {
+.pagination .nav-links .next,
+.pagination .nav-links .prev {
   writing-mode: vertical-rl;
+  color: #0a0a0a;
+  font-weight: bold;
 }
 
 .pagination span, .pagination a {
@@ -1363,19 +1151,72 @@ body {
   align-self: center;
 }
 
-/* .pagination .next {
-	margin-right: 0; // its always last in the list
+/*------------------------------------*\
+  # COMMENTS
+\*------------------------------------*/
+/* this doesnt work in sass but im not sure its exceptionally important
+.comment-reply-title:focus {
+    @extend .screen-reader-text:focus;
 } */
-.pagination .nav-links .next,
-.pagination .nav-links .prev {
-  color: #0a0a0a;
+#email-notes {
+  display: block;
 }
 
-.pagination .prev,
-.pagination .next {
+/*------------------------------------*\
+  # CATEGORY PAGE
+\*------------------------------------*/
+.category-sub {
+  width: calc(100% - 6rem);
+  max-width: 77rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.category-sub ul {
+  padding-left: 0;
+}
+@media (min-width: 640px) {
+  .category-sub ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+  }
+}
+.category-sub ul li {
+  list-style: none;
+  text-align: center;
+  border: 0.25em solid #c22127;
+  padding: 1rem;
   font-weight: bold;
 }
 
+.article-thumbnail {
+  grid-row: 1;
+  grid-column: 2;
+}
+@media (min-width: 640px) {
+  .article-thumbnail {
+    grid-column: 2/6;
+  }
+}
+
+.article-thumbnail > a,
+.category-thumbnail > a {
+  width: 100%;
+  display: block;
+}
+
+.article-thumbnail > a > img, .category-thumbnail > a > img {
+  width: 100%;
+}
+
+.category-break {
+  margin-bottom: 3rem;
+}
+
+/*------------------------------------*\
+    #ORGANISMS
+\*------------------------------------*/
 .site-header {
   width: 100%;
   max-width: 77rem;
@@ -1900,124 +1741,310 @@ add these back in when I figure out which are good
   }
 }
 
-.comment-reply-title {
-  display: none;
-}
-
-#email-notes {
-  display: block;
-}
-
-.article-content .button,
-.quote-content .button {
-  text-decoration: none;
-  box-shadow: none;
-  color: #c22127;
-  background: #fefefe;
-  border-right: 0.1em solid #c22127;
-  border-bottom: 0.1em solid #c22127;
-  border-bottom-right-radius: 3px;
-}
-
-/*--------------------------------------------------------------
-2.0 Accessibility
---------------------------------------------------------------*/
-/* Text meant only for screen readers. These are the wordpress twentyseventeen option for the default places its needed */
-.screen-reader-text {
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  overflow: hidden;
-  position: absolute !important;
-  width: 1px;
-  word-wrap: normal !important;
-  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
-}
-
-.screen-reader-text:focus {
-  background-color: #f1f1f1;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-  clip: auto !important;
-  color: #21759b;
-  display: block;
-  font-size: 14px;
-  font-size: 0.875rem;
-  font-weight: 700;
-  height: auto;
-  left: 5px;
-  line-height: normal;
-  padding: 15px 23px 14px;
-  text-decoration: none;
-  top: 5px;
-  width: auto;
-  z-index: 100000;
-  /* Above WP toolbar. */
-}
-
-.category-sub {
-  width: calc(100% - 6rem);
-  max-width: 77rem;
-  margin: 0 auto;
-  margin-bottom: 1rem;
-}
-
-.category-sub ul {
-  padding-left: 0;
-}
-@media (min-width: 640px) {
-  .category-sub ul {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-  }
-}
-.category-sub ul li {
-  list-style: none;
-}
-
-.category-sub li {
-  text-align: center;
-}
-
-.footer_menu li,
-.category-sub li {
-  border: 0.25em solid #c22127;
-  padding: 1rem;
-  font-weight: bold;
-}
-
-.article-thumbnail {
-  grid-row: 1;
-  grid-column: 2;
-}
-@media (min-width: 640px) {
-  .article-thumbnail {
-    grid-column: 2/6;
-  }
-}
-
-.article-thumbnail a, .category-thumbnail a {
-  width: 100%;
-  display: block;
-}
-
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+/**
+ *
+ * 1) This caps the width of text passages
+ *    to achieve a comfortable line length
+ */
 /*
-.article-thumbnail img, .category-thumbnail img {
-	// justify-self: center; // this should be handled by the block
-}
-*/
-.article-thumbnail > a > img, .category-thumbnail > a > img {
-  width: 100%;
+.l-linelength-container {
+	max-width: $l-linelength-width;
+} */
+/*------------------------------------*\
+    #GRID
+\*------------------------------------*/
+/*------------------------------------*\
+    #UTILITIES
+\*------------------------------------*/
+/*------------------------------------*\
+    #VISIBILITY CLASSES
+\*------------------------------------*/
+/**
+ * Is Hidden
+ * 1) Completely remove from the flow and screen readers.
+ */
+.u-is-hidden {
+  display: none !important;
+  visibility: hidden !important;
 }
 
-.category-break {
-  margin-bottom: 3rem;
+/**
+ * Is Visibly Hidden
+ * 1) Completely remove from the flow but leave available to screen readers.
+ */
+.u-is-vishidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
 }
 
-figure {
-  margin: 0;
+/*------------------------------------*\
+    #SPACING
+\*------------------------------------*/
+/**
+ * Margin bottom none
+ * 1) Force margin bottom of 0
+ */
+.u-margin-bottom-none {
+  margin-bottom: 0 !important;
 }
+
+/**
+ * Margin bottom small
+ * 1) Force margin bottom of $spacing-small variable
+ */
+/* .u-margin-bottom-small {
+	margin-bottom: $spacing-small !important;
+} */
+/**
+ * Margin bottom
+ * 1) Force margin bottom of $spacing variable
+ */
+/* .u-margin-bottom {
+	margin-bottom: $spacing !important;
+} */
+/**
+ * Margin bottom large
+ * 1) Force margin bottom of $spacing-large variable
+ */
+/* .u-margin-bottom-large {
+	margin-bottom: $spacing-large !important;
+} */
+/* .u-margin-bottom-large-to-xxl {
+	margin-bottom: $spacing-large !important;
+
+	@media all and (min-width: $bp-large) {
+		margin-bottom: $spacing-large*4 !important;
+	}
+} */
+/**
+ * Margin top none
+ * 1) Force margin top of 0
+ */
+.u-margin-top-none {
+  margin-top: 0 !important;
+}
+
+/**
+ * Margin top small
+ * 1) Force margin top of $spacing-small variable
+ */
+/* .u-margin-top-small {
+	// margin-top: $spacing-small !important;
+} */
+/**
+ * Margin top
+ * 1) Force margin top of $spacing variable
+ */
+/* .u-margin-top {
+	// margin-top: $spacing !important;
+} */
+/**
+ * Margin top large
+ * 1) Force margin top of $spacing-large variable
+ */
+/* .u-margin-top-large {
+	// margin-top: $spacing-large !important;
+} */
+.u-margin-top-booking {
+  margin-top: 28rem !important;
+}
+
+/**
+ * Margin right none
+ * 1) Force margin right of 0
+ */
+.u-margin-right-none {
+  margin-right: 0 !important;
+}
+
+/**
+ * Margin right small
+ * 1) Force margin right of $spacing-small variable
+ */
+/* .u-margin-right-small {
+	// margin-right: $spacing-small !important;
+} */
+/**
+ * Margin right
+ * 1) Force margin right of $spacing variable
+ */
+/* .u-margin-right {
+	// margin-right: $spacing !important;
+} */
+/**
+ * Margin right large
+ * 1) Force margin right of $spacing-large variable
+ */
+/* .u-margin-right-large {
+	// margin-right: $spacing-large !important;
+} */
+/**
+ * Margin left none
+ * 1) Force margin left of 0
+ */
+/* .u-margin-left-none {
+	margin-left: 0 !important;
+} */
+/**
+ * Margin left small
+ * 1) Force margin left of $spacing-small variable
+ */
+/* .u-margin-left-small {
+	// margin-left: $spacing-small !important;
+} */
+/**
+ * Margin left
+ * 1) Force margin left of $spacing variable
+ */
+/* .u-margin-left {
+	// margin-left: $spacing !important;
+} */
+/**
+ * Margin left large
+ * 1) Force margin left of $spacing-large variable
+ */
+/* .u-margin-left-large {
+	// margin-left: $spacing-large !important;
+} */
+/**
+ * Center display block contents
+ */
+/* .u-margin-center {
+	margin: 0 auto !important;
+} */
+/**
+ * Padding none
+ */
+/* .u-padding-none {
+	padding: 0 !important;
+} */
+/**
+ * Padding small
+ */
+/* .u-padding-small {
+	// padding: $spacing-small !important;
+} */
+/**
+ * Padding
+ */
+/* .u-padding {
+	// padding: $spacing !important;
+} */
+/**
+ * Padding large
+ */
+/* .u-padding-large {
+	// padding: $spacing-large !important;
+} */
+/**
+ * Padding top none
+ */
+/* .u-padding-top-none {
+	padding-top: 0 !important;
+} */
+/**
+ * Padding top small
+ */
+/* .u-padding-top-small {
+	// padding-top: $spacing-small !important;
+} */
+/**
+ * Padding top
+ */
+/* .u-padding-top {
+	// padding-top: $spacing !important;
+} */
+/**
+ * Padding top large
+ */
+/* .u-padding-top-large {
+	// padding-top: $spacing-large !important;
+} */
+/**
+ * Padding bottom none
+ */
+/* .u-padding-bottom-none {
+	padding-bottom: 0 !important;
+} */
+/**
+ * Padding bottom small
+ */
+/* .u-padding-bottom-small {
+	// padding-bottom: $spacing-small !important;
+} */
+/**
+ * Padding bottom
+ */
+/* .u-padding-bottom {
+	// padding-bottom: $spacing !important;
+} */
+/**
+ * Padding bottom large
+ */
+/* .u-padding-bottom-large {
+	// padding-bottom: $spacing-large !important;
+} */
+/**
+ * Padding right none
+ */
+/* .u-padding-right-none {
+	padding-right: 0 !important;
+} */
+/**
+ * Padding right small
+ */
+/* .u-padding-right-small {
+	// padding-right: $spacing-small !important;
+} */
+/**
+ * Padding right
+ */
+/* .u-padding-right {
+	// padding-right: $spacing !important;
+} */
+/**
+ * Padding right large
+ */
+/* .u-padding-right-large {
+	// padding-right: $spacing-large !important;
+} */
+/**
+ * Padding left none
+ */
+/* .u-padding-left-none {
+	padding-left: 0 !important;
+} */
+/**
+ * Padding left small
+ */
+/* .u-padding-left-small {
+	// padding-left: $spacing-small !important;
+} */
+/**
+ * Padding left
+ */
+/* .u-padding-left {
+	// padding-left: $spacing !important;
+} */
+/**
+ * Padding left large
+ */
+/* .u-padding-left-large {
+	// padding-left: $spacing-large !important;
+} */
+/*------------------------------------*\
+    #COMPONENTS
+\*------------------------------------*/
 
 /*# sourceMappingURL=style.css.map */

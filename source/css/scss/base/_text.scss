@@ -5,43 +5,48 @@
 /**
  * Paragraph base styles
  */
-p {
+/* p {
 	margin-bottom: $spacing;
-}
+} */
 
 /**
  * Blockquote base styles
  */
+ /*
 blockquote {
 	font-style: italic;
 	border-left: 1px solid $color-neutral-gray-50;
 	color: $color-neutral-gray-50;
 	padding-left: 1rem;
 	margin-bottom: $spacing;
-}
+} */
 
 /**
  * Horizontal rule base styles
  */
+ /*
 hr {
 	border: 0;
 	height: 1px;
 	background: $color-neutral-gray-50;
 	margin: 1rem 0;
-}
+} */
 
 /**
  * Selection styles
  */
-::-moz-selection {
-	color: $color-text-highlight;
-	background: $color-text-highlight-bg; /* Gecko Browsers */
-}
-
 .text__selection // pattern lab testing
 ::selection {
-	color: $color-text-highlight;
-	background: $color-text-highlight-bg; /* WebKit/Blink Browsers */
+	// color: $color-text-highlight;
+	background: $primary-color;
+}
+
+a::selection {
+	color: $white;
+}
+
+.text-center {
+    text-align: center;
 }
 
 /**
@@ -49,8 +54,8 @@ hr {
  */
 code {
 	display: inline-block;
-	background: $color-neutral-gray-02;
-	border: 1px solid $color-neutral-gray-13;
+	// background: $color-neutral-gray-02;
+	// border: 1px solid $color-neutral-gray-13;
 	padding: 0.2rem 0.5rem;
 	line-height: 1.2;
 	font-size: 0.85rem;
@@ -60,9 +65,9 @@ code {
  * Preformatted text base styles
  */
 pre {
-	background: $color-neutral-gray-02;
-	border: 1px solid $color-neutral-gray-13;
-	font-size: $font-size-med;
+	// background: $color-neutral-gray-02;
+	// border: 1px solid $color-neutral-gray-13;
+	// font-size: $font-size-med;
 	padding: 1rem;
 	overflow-x: auto;
 
@@ -93,4 +98,40 @@ pre[class*="language-"] {
 	@media (min-width: map-get($breakpoints, medium)) {
 		border-bottom-width: 1em;
 	}
+}
+
+/*--------------------------------------------------------------
+2.0 Accessibility
+--------------------------------------------------------------*/
+
+/* Text meant only for screen readers. These are the wordpress twentyseventeen option for the default places its needed */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	-webkit-border-radius: 3px; // do I need this in scss?
+	border-radius: 3px;
+	-webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); // do I need this in scss?
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
 }

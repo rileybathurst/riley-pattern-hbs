@@ -41,7 +41,7 @@
  * Brand Colors
  * 1) Brand=specific colors
  */
-$color-brand-blue: #0000ff;
+// $color-brand-blue: #0000ff;
 $primary-color: #c22127;
 $secondary-color: #8a0000;
 
@@ -49,6 +49,7 @@ $secondary-color: #8a0000;
  * Neutral Colors
  * 1) Neutral colors are grayscale values used throughout the UI
  */
+/*
 $color-neutral-white: #fff;
 $color-neutral-gray-02: #f9f9f9;
 $color-neutral-gray-07: #eee;
@@ -59,6 +60,7 @@ $color-neutral-gray-60: #666;
 $color-neutral-gray-73: #444;
 $color-neutral-gray-93: #131313;
 $color-neutral-black: #000;
+*/
 
 $black: #0a0a0a;
 $white: #fefefe;
@@ -71,10 +73,12 @@ $dark-gray: #8a8a8a;
  * 1) Utility colors are colors used to provide feedback, such as alert messages,
  *    form validation, etc.
  */
+ /*
 $color-utility-info: #0192d0;
 $color-utility-error: #b12a0b;
 $color-utility-success: #03804d;
 $color-utility-warning: #a59b15;
+*/
 
 /*------------------------------------*\
     #TYPOGRAPHY
@@ -89,12 +93,14 @@ $font-family-secondary: serif;
 /**
  * Font Sizing
  */
+ /*
 $font-size-sm: 0.75rem;
 $font-size-sm-2: 0.85rem;
 $font-size-med: 1rem;
 $font-size-med-2: 1.2rem;
 $font-size-large: 2rem;
 $font-size-xl: 3rem;
+*/
 
 h1 {
     font-size: 3.052em;
@@ -104,12 +110,14 @@ h1 {
 /**
  * Line Height
  */
+ /*
 $line-height-sm: 0.8;
 $line-height-sm-2: 0.9;
 $line-height-med: 1;
 $line-height-med-2: 1.2;
 $line-height-large: 1.6;
 $line-height-xl: 1.8;
+*/
 
 /*------------------------------------*\
     #LAYOUT
@@ -118,8 +126,8 @@ $line-height-xl: 1.8;
 /**
  * Max Width
  */
-$l-max-width: 60rem !default;
-$l-linelength-width: 36rem !default;
+// $l-max-width: 60rem !default;
+// $l-linelength-width: 36rem !default;
 
 /*------------------------------------*\
     #SPACING
@@ -130,9 +138,9 @@ $l-linelength-width: 36rem !default;
  * 1) Used to space grids and body padding
  */
 
-$spacing: 1rem;
-$spacing-small: round(0.5 * $spacing);
-$spacing-large: round(2 * $spacing);
+// $spacing: 1rem;
+// $spacing-small: round(0.5 * $spacing);
+// $spacing-large: round(2 * $spacing);
 
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -145,12 +153,12 @@ $global-grid-gap: $global-margin;
 /**
  * Border widths
  */
-$border-width: 1px;
+// $border-width: 1px;
 
 /**
  * Border radius
  */
-$border-radius: 8px;
+// $border-radius: 8px;
 
 /*------------------------------------*\
     #ANIMATION
@@ -159,13 +167,13 @@ $border-radius: 8px;
 /**
  * Transition Speed
  */
-$anim-fade-quick: 0.15s;
-$anim-fade-long: 0.4s;
+// $anim-fade-quick: 0.15s;
+// $anim-fade-long: 0.4s;
 
 /**
  * Transition Ease
  */
-$anim-ease: ease-out;
+// $anim-ease: ease-out;
 
 /*------------------------------------*\
     #BREAKPOINTS
@@ -175,10 +183,12 @@ $anim-ease: ease-out;
  * Breakpoints used in media queries
  * 1) These are not the only breakpoints used, but they provide a few defaults
  */
+ /*
 $bp-small: 28em;
 $bp-med: 47em;
 $bp-large: 60em;
 $bp-xl: 70em;
+*/
 
 $breakpoints: (
   small: 0,

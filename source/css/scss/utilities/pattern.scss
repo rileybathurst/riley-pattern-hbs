@@ -1,0 +1,10 @@
+// Patten Lab testing only elements are not on production
+
+.stay-gold { // keep a box open 
+    min-height: 50px;
+}
+
+.text__selection {
+	color: $color-text-highlight;
+	background: $color-text-highlight-bg; /* WebKit/Blink Browsers */
+}

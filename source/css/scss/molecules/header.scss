@@ -1,0 +1,132 @@
+/*------------------------------------*\
+  #HEADER
+\*------------------------------------*/
+
+.fp-box { // this was originally front page title box but now it needs a rename
+    background: $primary-color;
+    color: $white;
+    text-align: center;
+    font-weight: bold;
+    padding: $global-padding 0;
+}
+
+.spine-border {
+	border-left: 4px solid $primary-color;
+	padding-top: 3rem;
+}
+
+.page-title {
+	margin: 0;
+	font-size: 2em; // type scale?
+	border: .2em solid $primary-color; // this is different to the border width used by spine border
+	padding: $global-padding*2; // why half size?
+	color: $primary-color;
+	word-wrap: break-word;
+	text-align: center;
+
+	@media (min-width: map-get($breakpoints, medium)) {
+		font-size: 3em;
+	}
+}
+
+.article-date {
+	color: $dark-gray;
+	margin-top: 0; // reset of the heading levels
+}
+
+.breadcrumbs {
+    writing-mode: vertical-rl;
+
+    a {
+        color: #575757; // dark-gray doesn't pass contrast checks but I didn't want to go all the way to black
+        text-decoration: line-through;
+    }
+}
+
+.header-color-blocking {
+    mix-blend-mode: multiply;
+	background: $primary-color;
+}
+
+.header-logo {
+    fill: $primary-color;
+}
+
+.site-branding-text {
+
+
+    // @media (min-width: map-get($breakpoints, medium)) {
+		writing-mode: vertical-rl;
+		justify-self: center;
+    // }
+    // color: $white; // not needed as it get's overwritten by the a
+    // font-size: 2em; // these keep getting overwritten its needs to be sorted out
+    background: black; // adding this incase we dont have images the text is still visible // true black for the screen blend to not show anything
+
+    a { // remove the additional classes
+        font-size: 0.8em; 
+        color: $white;
+        padding: $global-padding; // new
+        display: inline-block; // new
+    }
+}
+
+.single .site-branding-text {
+	writing-mode: initial;
+
+    a {
+        color: $black;
+        padding: initial;
+    }
+}
+
+// -----------------------------------------------
+.navigation-top ul { // does this need to be told to be a flex?
+	// flex-direction: column;
+	margin: 0; // browser reset
+	padding-left: 0;
+}
+
+.single .navigation-top ul {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+
+	@media (min-width: map-get($breakpoints, medium)) {
+		// padding-left: $global-padding;
+		flex-direction: row;
+		justify-content: space-between;
+    }
+}
+
+.navigation-top ul li {
+	font-size: 1.5rem; // type scale? has to be rem or can start to multiply when nested
+	font-weight: bold;
+	margin-bottom: $global-margin; // change this around
+	// margin-bottom: 0;
+	@media (min-width: map-get($breakpoints, medium)) {
+		font-size: 2.25rem; // type scale?
+	}
+}
+
+/*
+.navigation-top ul li a {
+	// padding: 0; redundant
+}
+*/
+
+/*
+.navigation-top a {
+	// color: $black;
+	// text-decoration: underline; duplicate
+}
+
+.navigation-top a:hover {
+	// text-decoration: line-through; 
+}
+*/
+
+.spine {
+    writing-mode: vertical-rl;
+    color: #575757; // darker than dark gray to pass contrast checks seems like something I should think about doing this everywhere
+}

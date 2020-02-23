@@ -16,10 +16,11 @@ html {
  * 1) Set the body element's height to at least 100% of the viewport.
  *    This is used to achieve a sticky footer
  */
+
 body {
-	min-height: 100vh; /* 1 */
+	// min-height: 100vh; // 1
 	font-family: $font-family-primary;
-	@include typographyBody();
-	background-color: $color-body-bg;
-	color: $color-body-text;
+	// @include typographyBody();
+	// background-color: $color-body-bg;
+	// color: $color-body-text;
 }
