@@ -102,11 +102,6 @@ $font-size-large: 2rem;
 $font-size-xl: 3rem;
 */
 
-h1 {
-    font-size: 3.052em;
-    line-height: 1.15;
-}
-
 /**
  * Line Height
  */
@@ -199,3 +194,5 @@ $breakpoints: (
 );
 
 $page-width: 77rem;
+
+$global-border: 4px;

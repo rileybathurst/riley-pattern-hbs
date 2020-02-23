@@ -21,6 +21,8 @@ Building this up in an atomic design way, theres a bunch to clean up in this the
 
 Until I get my own sorted better [https://cssguidelin.es](https://cssguidelin.es)
 
-- 2 spaces
+- 4 spaces
 - Never use 3 margins or padding
 - never leave empty html elements <!-- stay gold -->
+- 1 blank line before a media query
+- grid row before grid column

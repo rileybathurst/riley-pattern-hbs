@@ -2,36 +2,14 @@
   #HEADER
 \*------------------------------------*/
 
-.fp-box { // this was originally front page title box but now it needs a rename
-    background: $primary-color;
-    color: $white;
-    text-align: center;
-    font-weight: bold;
-    padding: $global-padding 0;
-}
-
-.spine-border {
-	border-left: 4px solid $primary-color;
-	padding-top: 3rem;
-}
-
 .page-title {
-	margin: 0;
-	font-size: 2em; // type scale?
-	border: .2em solid $primary-color; // this is different to the border width used by spine border
-	padding: $global-padding*2; // why half size?
-	color: $primary-color;
-	word-wrap: break-word;
-	text-align: center;
-
-	@media (min-width: map-get($breakpoints, medium)) {
-		font-size: 3em;
-	}
-}
-
-.article-date {
-	color: $dark-gray;
-	margin-top: 0; // reset of the heading levels
+    margin: 0; // reset headings
+    border: $global-border solid $primary-color; // this is different to the border width used by spine border
+    // padding: $global-padding*2; // this was doubled but im trying to simplify
+    padding: $global-padding; // its not a link is that a problem?
+    color: $primary-color;
+    word-wrap: break-word; // needed for small screens
+    text-align: center;
 }
 
 .breadcrumbs {
@@ -39,13 +17,13 @@
 
     a {
         color: #575757; // dark-gray doesn't pass contrast checks but I didn't want to go all the way to black
-        text-decoration: line-through;
+        text-decoration: line-through; // start looking like the hover state on purpose
     }
 }
 
 .header-color-blocking {
     mix-blend-mode: multiply;
-	background: $primary-color;
+    background: $primary-color;
 }
 
 .header-logo {
@@ -53,26 +31,19 @@
 }
 
 .site-branding-text {
+    writing-mode: vertical-rl;
+    justify-self: center;
+    background: black; // adding this incase we dont have images the text is still visible // true black not $black for the screen blend to not show anything
 
-
-    // @media (min-width: map-get($breakpoints, medium)) {
-		writing-mode: vertical-rl;
-		justify-self: center;
-    // }
-    // color: $white; // not needed as it get's overwritten by the a
-    // font-size: 2em; // these keep getting overwritten its needs to be sorted out
-    background: black; // adding this incase we dont have images the text is still visible // true black for the screen blend to not show anything
-
-    a { // remove the additional classes
-        font-size: 0.8em; 
+    a {
         color: $white;
-        padding: $global-padding; // new
-        display: inline-block; // new
+        padding: $global-padding;
+        display: inline-block; // am I sure this is neccessary
     }
 }
 
-.single .site-branding-text {
-	writing-mode: initial;
+.single .site-branding-text { // no longer over the image
+    writing-mode: initial;
 
     a {
         color: $black;
@@ -80,51 +51,31 @@
     }
 }
 
-// -----------------------------------------------
-.navigation-top ul { // does this need to be told to be a flex?
-	// flex-direction: column;
-	margin: 0; // browser reset
-	padding-left: 0;
-}
+.navigation-top ul {
+    margin: 0; // browser reset
+    padding-left: 0; // browser reset
 
-.single .navigation-top ul {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-
-	@media (min-width: map-get($breakpoints, medium)) {
-		// padding-left: $global-padding;
-		flex-direction: row;
-		justify-content: space-between;
+    > li {
+        font-size: 1.5rem; // type scale? has to be rem or can start to multiply when nested
+        font-weight: bold;
+        margin-bottom: $global-margin; // change this around
+        
+        @media (min-width: map-get($breakpoints, medium)) {
+            font-size: 2.25rem; // type scale?
+        }
     }
 }
 
-.navigation-top ul li {
-	font-size: 1.5rem; // type scale? has to be rem or can start to multiply when nested
-	font-weight: bold;
-	margin-bottom: $global-margin; // change this around
-	// margin-bottom: 0;
-	@media (min-width: map-get($breakpoints, medium)) {
-		font-size: 2.25rem; // type scale?
-	}
-}
+.single .navigation-top ul { // this is very different but same DOM
+    display: flex;
+    flex-direction: column;
 
-/*
-.navigation-top ul li a {
-	// padding: 0; redundant
+    @media (min-width: map-get($breakpoints, medium)) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 }
-*/
-
-/*
-.navigation-top a {
-	// color: $black;
-	// text-decoration: underline; duplicate
-}
-
-.navigation-top a:hover {
-	// text-decoration: line-through; 
-}
-*/
 
 .spine {
     writing-mode: vertical-rl;
