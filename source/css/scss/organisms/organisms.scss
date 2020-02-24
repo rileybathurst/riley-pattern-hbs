@@ -366,15 +366,30 @@
     }
 }
 
-.single .spine-border, // even tho these are the same the names help keep them seperate
+.single .spine-border, // even tho these are the same the names help keep them seperate and documenting the details really helps
 .category .spine-border {
-    grid-row: 1/5; // image : header : date : content
+    grid-row: 1/5; // image : header : date : content : explore
     grid-column: 1;
     justify-self: start; // I think this is a browser default
 
     @media (min-width: map-get($breakpoints, medium)) {
         grid-row: 1/4; // what are the 6: header : date : content
         justify-self: start; // categories takes up that space as well
+    }
+}
+
+.single .spine-border {
+    grid-row: 1/6; // header : date : speechbubble : content : category
+    @media (min-width: map-get($breakpoints, medium)) {
+        grid-row: 1/5; // header : date / speechbubble : content : category
+    }
+}
+
+.category .spine-border {
+    grid-row: 1/6; // image : header : content : category : explore
+
+    @media (min-width: map-get($breakpoints, medium)) {
+        grid-row: 1/5; // image : header : date : content : explore
     }
 }
 
@@ -393,22 +408,22 @@
     grid-column: 2;
 
     @media (min-width: map-get($breakpoints, medium)) {
-        grid-column: 2 / 6;
+        grid-column: 2 / 4; // make room for the sppechbubblle
     }
 }
 
 .article-speechbubble {
-    grid-column: 4 / 6; //dealing with the last skinny column // this might be wrong
-    justify-self: end;
+    grid-column: 2; //dealing with the last skinny column // this might be wrong
 
     @media (min-width: map-get($breakpoints, medium)) {
-        grid-column: 4;
+        grid-column: 4/6;
+        justify-self: end;
     }
 }
 
 .article-category {
     grid-column: 2;
-    grid-row: 4;
+    // grid-row: 4; I think we can keep this out and do the order with the DOM
 
     @media (min-width: map-get($breakpoints, medium)) {
         text-align: right;

@@ -168,6 +168,14 @@
     width: 100%;
 }
 
+.article-explore {
+    grid-column: 2;
+
+    @media (min-width: map-get($breakpoints, medium)) {
+        grid-column: 2/6;
+    }
+}
+
 .category-break {
     margin-bottom: $global-margin*3;
 }
