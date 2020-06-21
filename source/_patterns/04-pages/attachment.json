@@ -1,0 +1,98 @@
+{
+	"company": {
+		"name": "Riley Bathurst",
+		"byline": "Pushing Pixels Since Two Thousand & Nine.",
+		"email": "riley@rileybathurst.com",
+		"phone": "(530) 386-6296"
+	},
+	"cards": [
+		{
+			"title": "Clicks"
+		},
+		{
+			"title": "Code"
+		},
+		{
+			"title": "Camera"
+		},
+		{
+			"title": ""
+		},
+		{
+			"title": ""
+		},
+		{
+			"title": ""
+		}
+	],
+	"menu": [
+		{
+			"title": "Search"
+		},
+		{
+			"title": "Contact"
+		},
+		{
+			"title": "Blog"
+		},
+		{
+			"title": "Social"
+		},
+		{
+			"title": "Now"
+		}
+	],
+	"galleryImage": "../../images/macbook-proposal-mockup.png",
+	"page": {
+		"title": "NZ Tour Guide",
+		"date": "August 31, 2019"
+	},
+	"navigation": [
+		{
+			"post": "Wine Enthusiast 40 U 40 2019"
+		},
+		{
+			"post": "Squaw Shred Report"
+		}
+	],
+	"tags": [
+        {
+            "tag": "CSS"
+        },
+        {
+            "tag": "developer"
+        },
+        {
+            "tag": "html"
+        },
+        {
+            "tag": "js"
+        },
+        {
+            "tag": "new zealand"
+        },
+        {
+            "tag": "webpack"
+        },
+        {
+            "tag": "website"
+        }
+    ],
+	"text": [
+		{
+			"p": "For a major rebuild of the one page New Zealand Tour Guide site I focused on speed and built a snappy little site with the basics of HTML, CSS, and JS producing a site that loads dramatically faster and consumes far fewer resources than what was there before."
+		},
+		{
+			"p": "The choice to build without a Content Management System came from hosting NZTG as a WordPress site for the past few years and make very few if any changes so without the burden any dependencies I looked around to the options and chose to compile the code down with WebPack but in a way that’s not particularly tied to it so if the time does come to change the site again there is very little that would have to be swapped out to use any other system and most additions can simply be built atop what we have."
+		},
+		{
+			"p": "I wanted to keep the page very simple with blocks of text running down the center of the page meaning that no matter what design the information would be very readable and the styling consistent."
+		},
+		{
+			"p": "Where I did bring in some attitude was with the angles on the top and bottom of images, the boxes containing the services and the testimonials. This allowed me to break up traditional layout and also keep the image heights down, especially on a large screen full width images have the habit of taking up more height than I like and constraining them with a maximum height can produce a sliver of an image looking out of place. Once the images had the angle the boxes needed to match and although the technique is relatively different between the two elements they match nicely."
+		},
+		{
+			"p": "When scrolling down the page the images slightly parallax and the padding grows as elements scroll in and out of the screen, this was done with the goal of the site to be as fast as possible in mind, to accomplish this I built with a nested Intersection Observer. I purposefully didn’t include a polyfill for browsers that don’t support IO as tho they will be seeing a less dynamic site I made the decision that without a modern browser a frivolous slide to the images could be missed."
+		}
+	]
+}

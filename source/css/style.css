@@ -234,6 +234,15 @@ $bp-xl: 70em;
 /*------------------------------------*\
     #TESTING
 \*------------------------------------*/
+.stay-gold {
+  min-height: 50px;
+}
+
+.text__selection {
+  color: #fefefe;
+  background: #c22127;
+}
+
 /*------------------------------------*\
     #BASE
 \*------------------------------------*/
@@ -606,6 +615,7 @@ button:hover {
   border-right: 0.1em solid #c22127;
   border-bottom: 0.1em solid #c22127;
   border-bottom-right-radius: 3px;
+  display: inline-block;
 }
 
 .article-content .button:hover,
@@ -1289,8 +1299,8 @@ tr {
 
 .custom-header-media {
   z-index: 10;
-  grid-column: 2;
   grid-row: 1/3;
+  grid-column: 2;
 }
 @media (min-width: 640px) {
   .custom-header-media {

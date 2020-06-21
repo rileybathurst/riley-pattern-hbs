@@ -4,7 +4,10 @@
     min-height: 50px;
 }
 
+// why is this also in pattern
 .text__selection {
-	color: $color-text-highlight;
-	background: $color-text-highlight-bg; /* WebKit/Blink Browsers */
+	// color: $color-text-highlight;
+	// background: $color-text-highlight-bg; /* WebKit/Blink Browsers */
+	color: $white;
+	background: $primary-color;
 }

@@ -9,6 +9,11 @@
       "name": "$header-font-family",
       "value": "$body-font-family",
       "comment": ""
+    },
+    {
+      "name": "$code-font-family",
+      "value": "Monaco",
+      "comment": "This needs a name for how its actually being used"
     }
   ],
   "meta": {

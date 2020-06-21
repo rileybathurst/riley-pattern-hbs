@@ -49,6 +49,7 @@ button:hover {
 	border-right: .1em solid $primary-color; // global?
 	border-bottom: .1em solid $primary-color;
 	border-bottom-right-radius: 3px; // standardize this
+	display: inline-block;
 }
 
 .article-content .button:hover,

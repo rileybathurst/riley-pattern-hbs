@@ -7,7 +7,10 @@
  * and define them against variables that we can utilise anywhere throughout the project.
  */
 
-
+// Theres a few places where colors are defined
+// this seems to be highest on the list so the best place to start
+$primary-color: #c22127;
+$secondary-color: #8a0000;
 
 
 
@@ -27,9 +30,8 @@
 // $color-text-highlight: $color-neutral-gray-93;
 // $color-text-highlight-bg: $color-neutral-gray-13;
 
-
-
-
+$color-text-highlight: $primary-color;
+$color-text-highlight-bg: #0a0a0a;
 
 /*------------------------------------*\
     #LINKS
