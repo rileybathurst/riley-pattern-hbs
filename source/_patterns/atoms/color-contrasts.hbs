@@ -1,0 +1,79 @@
+{{! too big but thats later }}
+<ul class="sg-colors">
+  {{#contrasts}}
+    <li style="border: 2px solid {{value}}">
+
+      <h1>{{name}}</h1>
+      <h2>Hex {{value}}</h2>
+
+      <div style="background: white;" class="sg-swatch">
+        <span
+          class="sg-swatch"
+          style="background: var(--{{name}}); clip-path: polygon(0 0, 100% 0, 0 100%);"
+        ></span>
+      </div>
+      {{#white}}
+          {{> atoms-contrast-map}}
+      {{/white}}
+
+      <div style="background: black;" class="sg-swatch">
+        <span
+          class="sg-swatch"
+          style="background: var(--{{name}}); clip-path: polygon(0 0, 100% 0, 0 100%);"
+        ></span>
+      </div>
+      {{#black}}
+          {{> atoms-contrast-map}}
+      {{/black}}
+
+      <div style="background: var(--cinnabar)" class="sg-swatch">
+        <span
+          class="sg-swatch"
+          style="background: var(--{{name}}); clip-path: polygon(0 0, 100% 0, 0 100%);"
+        ></span>
+      </div>
+      {{#cinnabar}}
+          {{> atoms-contrast-map}}
+      {{/cinnabar}}
+
+      <div style="background: var(--cardinal)" class="sg-swatch">
+        <span
+          class="sg-swatch"
+          style="background: var(--{{name}}); clip-path: polygon(0 0, 100% 0, 0 100%);"
+        ></span>
+      </div>
+      {{#cardinal}}
+          {{> atoms-contrast-map}}
+      {{/cardinal}}
+
+      </span>
+    </li>
+
+  {{/contrasts}}
+</ul>
+
+<small>{{{meta.description}}}</small>
+
+{{! 
+I cant quite get the templating to do what I want.
+something like
+{{#each compared
+  {{#name
+    {{> atoms-contrast-map
+  {{/name
+{{/each
+
+and then the whole top thing
+
+WCAG 2.0 level AA
+requires a contrast ratio of at least
+4.5:1 for normal text
+3:1 for large text.
+
+WCAG 2.1 requires a contrast ratio of at least
+3:1 for graphics and user interface components (such as form input borders).
+
+WCAG Level AAA requires a contrast ratio of at least
+7:1 for normal text
+4.5:1 for large text. 
+}}

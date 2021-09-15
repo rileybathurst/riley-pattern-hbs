@@ -1,0 +1,181 @@
+/*------------------------------------*\
+  #MOLECULES
+\*------------------------------------*/
+
+/**
+ *
+ * ARTICLE
+ *
+ * ARTICLE_BASE
+ *
+ * PAGINATION
+ *
+ * COMMENTS
+ *
+ * CATEGORY PAGE
+*/
+
+/*------------------------------------*\
+  # ARTICLE
+\*------------------------------------*/
+
+.fp-box { // this was originally front page title box but now it needs a rename
+    background: $primary-color;
+    color: $white;
+    text-align: center;
+    font-weight: bold;
+    padding: $global-padding 0;
+}
+
+.spine-border {
+    border-left: 4px solid $primary-color;
+    padding-top: 3rem;
+}
+
+.article-date {
+    color: $dark-gray;
+    margin-top: 0; // reset headings
+}
+
+/*------------------------------------*\
+  # ARTICLE-BASE
+\*------------------------------------*/
+
+.post-navigation { // only shown on single pages
+    grid-column: 2;
+    margin-right: 3rem; // deals with the weird column situation ive given myself
+
+    @media (min-width: map-get($breakpoints, medium)) {
+        margin-right: 0;
+    }
+
+    a {
+        color: $black; // needs work it should resemble a link
+    }
+}
+
+.nav-previous,
+.nav-next {
+    font-weight: bold;
+    display: block; // fix pattern lab not needed in site as on production its a menu base ul
+}
+
+.article-tags a {
+    color: $dark-gray; // needs work it should resemble a link
+    display: block; // fix pattern lab not needed in site as on production its a menu base ul
+}
+
+/*------------------------------------*\
+  # PAGINATION
+\*------------------------------------*/
+
+.pagination {
+    max-width: $page-width;
+    margin: 3rem; //at a small size it doesnt need a grid it just needs the margins the 2rem of each side plus the grid-gap
+}
+
+.pagination .nav-links {
+    display: flex; // used for vertical distribution
+    justify-content: center;
+}
+
+.pagination .nav-links .next, // deep selectors as wp is providing the DOM
+.pagination .nav-links .prev { // what is this overwritting?
+    writing-mode: vertical-rl;
+    color: $black;
+    font-weight: bold;
+}
+
+.pagination span, .pagination a {
+    // margin-right: $global-margin; // Im not sure if this is technically breaking the center justify and should be a padding or half padding each way?
+    padding-left: $global-padding/2; // maybe this is better its hard as its supposed to be loppsided so I would have to test better
+    padding-right: $global-padding/2;
+    align-self: center;
+}
+
+/*------------------------------------*\
+  # COMMENTS
+\*------------------------------------*/
+
+.comment-reply-title {
+    @extend .screen-reader-text;
+}
+
+/* this doesnt work in sass but im not sure its exceptionally important
+.comment-reply-title:focus {
+    @extend .screen-reader-text:focus;
+} */
+
+#email-notes { // this is the top of the comment field
+    display: block; // cant change selector as its from wp
+}
+
+/*------------------------------------*\
+  # CATEGORY PAGE
+\*------------------------------------*/
+
+.cat-title {
+    grid-column: 2;
+
+    @media (min-width: map-get($breakpoints, medium)) {
+        grid-column: 2/6;
+    }
+}
+
+.category-sub {
+    width: calc(100% - 6rem);
+    max-width: $page-width;
+    margin: 0 auto;
+    margin-bottom: $global-margin;
+}
+
+.category-sub ul {
+    padding-left: 0; // browser reset
+
+    @media (min-width: map-get($breakpoints, medium)) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); // this could also be a flex
+        grid-gap: $global-grid-gap;
+    }
+    
+    li {
+        list-style: none;
+        text-align: center;
+        border: .25em solid $primary-color; // global?
+        padding: $global-padding;
+        font-weight: bold;
+    }
+}
+
+.article-thumbnail {
+    grid-row: 1;
+    grid-column: 2;
+    // max-height: 100vh; // this causes issues on wide short screens but I get the idea of something tall can be very large
+    // maybe it can be fixed with an overflow and then go even less than 100 to make it obvious and be able to scroll around it
+
+    @media (min-width: map-get($breakpoints, medium)) {
+        grid-column: 2 / 6;
+    }
+}
+
+.article-thumbnail > a,
+.category-thumbnail > a { // currently these are both the same
+    width: 100%;
+    display: block; // seems more suitable
+}
+
+.article-thumbnail > a > img, .category-thumbnail > a > img {
+    width: 100%;
+}
+
+.article-explore {
+    grid-column: 2;
+
+    @media (min-width: map-get($breakpoints, medium)) {
+        grid-column: 2/6;
+    }
+}
+
+.category-break {
+    margin-bottom: $global-margin*3;
+}

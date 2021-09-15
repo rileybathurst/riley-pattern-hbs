@@ -1,0 +1,30 @@
+/*------------------------------------*\
+    #LINKS
+\*------------------------------------*/
+
+/**
+ * Link base styles
+ */
+
+a {
+	color: $primary-color;
+
+	&:hover, &:focus {
+		color: $secondary-color;
+		text-decoration: line-through;
+	}
+/*
+	&:active {
+		color: $color-links-active;
+		text-decoration: line-through;
+	}
+
+	&:visited {
+		color: $color-links-visited;
+		text-decoration: line-through;
+	} */
+} 
+
+.a-hover {
+	text-decoration: line-through;
+}

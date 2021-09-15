@@ -1,0 +1,49 @@
+// Patten Lab testing only elements are not on production
+
+.stay-gold { // keep a box open 
+    min-height: 50px;
+}
+
+// why is this also in pattern
+.text__selection {
+	// color: $color-text-highlight;
+	// background: $color-text-highlight-bg; /* WebKit/Blink Browsers */
+	color: $white;
+	background: $primary-color;
+}
+
+.pass-fail {
+	p {
+		line-height: 2rem;
+		border-top: 1px solid gainsboro;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+	}
+}
+
+.pass {
+	background: lightseagreen;
+	border: 1px solid green;
+	color: white;
+	padding: 0.25rem 0.5rem ;
+	margin: 0.25rem 0.5rem ;
+	border-radius: 0.125rem;
+}
+
+.fail {
+	background: lightcoral;
+	border: 1px solid red;
+	color: black;
+	padding: 0.25rem 0.5rem ;
+	margin: 0.25rem 0.5rem ;
+	border-radius: 0.125rem;
+}
+
+.sg-colors {
+	h1, h2, h3, h4, h5, h6 {
+		font-size: clamp(1rem, 1.5rem, 2rem);
+		margin-block-start: 0;
+		margin-block-end: 0.5rem;
+	}
+}

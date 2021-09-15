@@ -1,0 +1,88 @@
+{
+  "contrasts": [
+    {
+      "name": "cinnabar",
+      "value": "#c22127",
+      "white": {
+        "reference": "white",
+        "value": "#fefefe",
+        "contrast": "5.88",
+        "normal-AA": "pass",
+        "normal-AAA": "pass",
+        "large-AA": "pass",
+        "large-AAA": "fail",
+        "UI": "pass"
+      },
+      "black": {
+        "reference": "black",
+        "contrast": "3.34",
+        "normal-AA": "pass",
+        "normal-AAA": "fail",
+        "large-AA": "fail",
+        "large-AAA": "fail",
+        "UI": "fail"
+      },
+      "cinnabar": {
+        "reference": "cinnabar",
+        "contrast": "0",
+        "normal-AA": "fail",
+        "normal-AAA": "fail",
+        "large-AA": "fail",
+        "large-AAA": "fail",
+        "UI": "fail"
+      },
+      "cardinal": {
+        "reference": "cardinal",
+        "contrast": "1.7",
+        "normal-AA": "fail",
+        "normal-AAA": "fail",
+        "large-AA": "fail",
+        "large-AAA": "fail",
+        "UI": "fail"
+      }
+    },
+    {
+      "name": "cardinal",
+      "value": "#8a0000",
+      "white": {
+        "reference": "white",
+        "contrast": "ccc",
+        "normal-AA": "pass",
+        "normal-AAA": "pass",
+        "large-AA": "pass",
+        "large-AAA": "fail",
+        "UI": "pass"
+      },
+      "black": {
+        "name": "black",
+        "contrast": "1.96",
+        "normal-AA": "pass",
+        "normal-AAA": "fail",
+        "large-AA": "fail",
+        "large-AAA": "fail",
+        "UI": "fail"
+      },
+      "cinnabar": {
+        "reference": "cinnabar",
+        "contrast": "0",
+        "normal-AA": "fail",
+        "normal-AAA": "fail",
+        "large-AA": "fail",
+        "large-AAA": "fail",
+        "UI": "fail"
+      },
+      "cardinal": {
+        "reference": "cardinal",
+        "contrast": "1.7",
+        "normal-AA": "fail",
+        "normal-AAA": "fail",
+        "large-AA": "fail",
+        "large-AAA": "fail",
+        "UI": "fail"
+      }
+    }
+  ],
+  "meta": {
+    "description": ""
+  }
+}

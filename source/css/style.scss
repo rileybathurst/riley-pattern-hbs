@@ -1,0 +1,71 @@
+/*------------------------------------*\
+    #TABLE OF CONTENTS
+\*------------------------------------*/
+/**
+ * ABSTRACTS..............................Declarations of Sass variables & mixins
+ * BASE...................................Default element styles
+ * LAYOUT.................................Layout-specific styles
+ * COMPONENTS.............................Component styles
+ * UTILITIES..............................Utility classes
+ */
+
+/*------------------------------------*\
+    #ABSTRACTS
+\*------------------------------------*/
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/colors";
+
+/*------------------------------------*\
+    #TESTING
+\*------------------------------------*/
+@import "scss/utilities/pattern"; // has to be below the variables
+// @import "scss/utilities/testcolors"; // this will generally be off but it helps to know what is where
+
+/*------------------------------------*\
+    #BASE
+\*------------------------------------*/
+@import "scss/base/reset";
+@import "scss/base/body";
+@import "scss/base/links";
+@import "scss/base/lists";
+@import "scss/base/headings";
+@import "scss/base/forms";
+@import "scss/base/buttons";
+@import "scss/base/main";
+@import "scss/base/media";
+@import "scss/base/text";
+@import "scss/base/_text"; // are these different?
+@import "scss/base/table";
+
+/*------------------------------------*\
+    #MOLECULES
+\*------------------------------------*/
+
+@import "scss/molecules/header";
+@import "scss/molecules/footer";
+@import "scss/molecules/molecules";
+
+/*------------------------------------*\
+    #ORGANISMS
+\*------------------------------------*/
+
+@import "scss/organisms/organisms";
+
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+@import "scss/layout/layout";
+
+/*------------------------------------*\
+    #UTILITIES
+\*------------------------------------*/
+@import "scss/utilities/visibility";
+@import "scss/utilities/spacing";
+
+/*------------------------------------*\
+    #COMPONENTS
+\*------------------------------------*/
+// @import "../_patterns/**/*.scss";
+
+@import "scss/base/riley";

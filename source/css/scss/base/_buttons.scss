@@ -1,0 +1,59 @@
+/*------------------------------------*\
+    #BUTTONS
+\*------------------------------------*/
+
+/**
+ * Button and submit inputs reset
+ * 1) These should be styled using c-btn
+ */
+
+.button, // sloppy but sometimes nesseacry
+button {
+    cursor: pointer; // added in pattern lab needs to go to site
+
+    margin: 0; /* bring the element back inline */ // do I mean browser reset?
+	background: none; // why important?
+	color: $primary-color;
+	border-color: $primary-color;
+	font-weight: bold;
+	border-top: none;
+	border-left: none;
+	font-size: 1.5em; // type scale?
+	/* padding-right: $global-padding; this was causing issues with hover looking strange but maybe I had done it or a reason?
+	padding-bottom: $global-padding;
+	*/ 
+	transition: 0.5s;
+	padding: $global-padding/2; // front page on 0 doesnt work
+
+	@media (min-width: map-get($breakpoints, medium)) {
+		font-size: 2em; // type scale?
+	} 
+}
+
+.button__hover, // pattern lab testing
+.button:hover,
+button:hover {
+	background: $primary-color; // important in site needs documentation
+	color: $white; // important on site needs documentation
+	padding-right: $global-padding; // this is on a transition so its interesting when just on the hover
+	padding-bottom: $global-padding; // this is on a transition so its interesting when just on the hover
+}
+
+.article-content .button,
+.article-content button,
+.quote-content .button {
+	text-decoration: none;
+	box-shadow: none;
+	// color: $primary-color; overwritten by regular button
+	// background: $white; // this is overwritten by the regular button which is kinda dumb
+	border-right: .1em solid $primary-color; // global?
+	border-bottom: .1em solid $primary-color;
+	border-bottom-right-radius: 3px; // standardize this
+	display: inline-block;
+}
+
+.article-content .button:hover,
+.article-content button:hover,
+.quote-content .button:hover {
+	border-bottom: 1px solid $primary-color; // global?
+}

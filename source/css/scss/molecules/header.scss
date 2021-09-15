@@ -1,0 +1,83 @@
+/*------------------------------------*\
+  #HEADER
+\*------------------------------------*/
+
+.page-title {
+    margin: 0; // reset headings
+    border: $global-border solid $primary-color; // this is different to the border width used by spine border
+    // padding: $global-padding*2; // this was doubled but im trying to simplify
+    padding: $global-padding; // its not a link is that a problem?
+    color: $primary-color;
+    word-wrap: break-word; // needed for small screens
+    text-align: center;
+}
+
+.breadcrumbs {
+    writing-mode: vertical-rl;
+
+    a {
+        color: #575757; // dark-gray doesn't pass contrast checks but I didn't want to go all the way to black
+        text-decoration: line-through; // start looking like the hover state on purpose
+    }
+}
+
+.header-color-blocking {
+    mix-blend-mode: multiply;
+    background: $primary-color;
+}
+
+.header-logo {
+    fill: $primary-color;
+}
+
+.site-branding-text {
+    writing-mode: vertical-rl;
+    justify-self: center;
+    background: black; // adding this incase we dont have images the text is still visible // true black not $black for the screen blend to not show anything
+
+    a {
+        color: $white;
+        padding: $global-padding;
+        display: inline-block; // am I sure this is neccessary
+    }
+}
+
+.single .site-branding-text { // no longer over the image
+    writing-mode: initial;
+
+    a {
+        color: $black;
+        padding: initial;
+    }
+}
+
+.navigation-top ul {
+    margin: 0; // browser reset
+    padding-left: 0; // browser reset
+
+    > li {
+        font-size: 1.5rem; // type scale? has to be rem or can start to multiply when nested
+        font-weight: bold;
+        margin-bottom: $global-margin; // change this around
+        
+        @media (min-width: map-get($breakpoints, medium)) {
+            font-size: 2.25rem; // type scale?
+        }
+    }
+}
+
+.single .navigation-top ul { // this is very different but same DOM
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: map-get($breakpoints, medium)) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+.spine {
+    writing-mode: vertical-rl;
+    color: #575757; // darker than dark gray to pass contrast checks seems like something I should think about doing this everywhere
+}

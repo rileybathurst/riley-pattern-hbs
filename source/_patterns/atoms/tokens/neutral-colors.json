@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+      "name": "white",
+      "value": "#fefefe"
+    },
+    {
+      "name": "light-gray",
+      "value": "#e6e6e6"
+    },
+    {
+      "name": "medium-gray",
+      "value": "#cacaca"
+    },
+    {
+      "name": "dark-gray",
+      "value": "#8a8a8a"
+    },
+    {
+      "name": "black",
+      "value": "#0a0a0a"
+    }
+  ],
+  "meta": {
+    "description": "To add to these items, use Sass variables that start with <code>$color-neutral-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+  }
+}

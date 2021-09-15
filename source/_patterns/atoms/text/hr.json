@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "name": "hr",
+      "value": "",
+      "comment": "I dont believe this is ever used blank so it should be combined with below"
+    },
+    {
+      "name": ".is-style-mega-hr, .mega-hr",
+      "value": "mega-hr",
+      "comment": "I believe this can become the default"
+    }
+  ],
+  "meta": {
+    "description": " "
+  }
+}

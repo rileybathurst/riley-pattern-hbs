@@ -1,0 +1,49 @@
+{
+  "items": [
+    {
+      "name": "h1",
+      "value": "3.052em",
+      "line-height": "1.15",
+      "margin": "2.75rem 0 1rem",
+      "comment": ""
+    },
+    {
+      "name": "h2",
+      "value": "2.441em",
+      "line-height": "1.15",
+      "margin": "2.75rem 0 1rem",
+      "comment": ""
+    },
+    {
+      "name": "h3",
+      "value": "1.953em",
+      "line-height": "1.15",
+      "margin": "2.75rem 0 1rem",
+      "comment": ""
+    },
+    {
+      "name": "h4",
+      "value": "1.563em",
+      "line-height": "1.15",
+      "margin": "2.75rem 0 1rem",
+      "comment": ""
+    },
+    {
+      "name": "h5",
+      "value": "1.25em",
+      "line-height": "1.15",
+      "margin": "2.75rem 0 1rem",
+      "comment": ""
+    },
+    {
+      "name": "h6",
+      "value": "",
+      "line-height": "",
+      "margin": "",
+      "comment": ""
+    }
+  ],
+  "meta": {
+    "description": "To add to these items, use Sass variables that start with <code>$font-size-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+  }
+}

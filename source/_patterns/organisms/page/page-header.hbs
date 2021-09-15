@@ -1,0 +1,21 @@
+<div class="single">{{! testing }}
+    <header class="site-header">
+        {{> molecules-breadcrumbs }}
+
+        {{! maybe this should be on the organism level }}
+        <div class="custom-header-media overlaying-image">
+            {{> molecules-custom-header-media }}
+        </div>
+
+        {{! I think I need to split this for single and others they are too different and getting complex to keep apart }}
+        <div class="single-header-top-line">{{! these two sit in the same grid space so need a flex to keep them apart }}
+            {{> molecules-site-branding-text }}
+            {{> molecules-navigation-top }}
+        </div>
+        
+        {{> molecules-header-logo }}
+        {{> molecules-spine }}
+    </header>
+</div>
+
+<small>{{{ meta.description }}}</small>

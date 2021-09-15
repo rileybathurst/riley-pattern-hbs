@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "name": "$body-font-family",
+      "value": "\"HelveticaNeue\", \"Helvetica\", \"Roboto\", \"Arial\", sans-serif",
+      "comment": ""
+    },
+    {
+      "name": "$header-font-family",
+      "value": "$body-font-family",
+      "comment": ""
+    },
+    {
+      "name": "$code-font-family",
+      "value": "Monaco",
+      "comment": "This needs a name for how its actually being used"
+    }
+  ],
+  "meta": {
+    "description": "To add to these items, use Sass variables that start with <code>$font-family-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+  }
+}

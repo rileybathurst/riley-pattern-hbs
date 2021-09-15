@@ -1,0 +1,23 @@
+{{# items }}
+    <{{ name }} style="
+        font-size: {{ value }};
+        line-height: {{ line-height }};
+        {{#if margin}}
+            margin:{{ margin}};
+        {{/if}}
+    "> {{! variables dont like being the char after opening tag but Im using the variable as the element which is maybe frowned upon? }}
+    
+        {{ name }}
+
+    </{{ name }}>
+    <ul>
+        <li>font-size: {{ value }};</li>
+        <li>line-height: {{ line-height }};</li>
+        {{#if margin}}
+            <li>margin: {{ margin}};</li>
+        {{/if}}
+        {{#if padding}}
+            <li>padding: {{ padding}};</li>
+        {{/if}}
+    </ul>
+{{/ items }}

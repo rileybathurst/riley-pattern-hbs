@@ -1,0 +1,84 @@
+/*------------------------------------*\
+    #COLORS
+\*------------------------------------*/
+
+/**
+ * In this file, we take the literal colors from our palette (defined in variables.scss)
+ * and define them against variables that we can utilise anywhere throughout the project.
+ */
+
+// Theres a few places where colors are defined
+// this seems to be highest on the list so the best place to start
+$primary-color: #c22127;
+$secondary-color: #8a0000;
+
+:root {
+    --cinnabar: #c22127;
+    --cardinal: #8a0000;
+}
+
+/*------------------------------------*\
+    #GLOBAL TEXT COLOR
+\*------------------------------------*/
+
+/**
+ * Body text and background colors
+ */
+// $color-body-text: $color-neutral-gray-93 !default;
+// $color-body-bg: $color-neutral-white !default;
+
+/**
+ * Highlight colors
+ */
+// $color-text-highlight: $color-neutral-gray-93;
+// $color-text-highlight-bg: $color-neutral-gray-13;
+
+$color-text-highlight: $primary-color;
+$color-text-highlight-bg: #0a0a0a;
+
+/*------------------------------------*\
+    #LINKS
+\*------------------------------------*/
+
+$color-links: $primary-color !default;
+$color-links-hover: $secondary-color !default;
+// $color-links-active: $color-neutral-gray-93 !default;
+// $color-links-visited: $color-neutral-gray-93 !default;
+
+
+
+
+
+/*------------------------------------*\
+    #BUTTONS
+\*------------------------------------*/
+
+// $color-btn-primary: $color-neutral-white !default;
+// $color-btn-primary-bg: $color-neutral-gray-93 !default;
+// $color-btn-primary-bg-hover: $color-neutral-gray-50 !default;
+// $color-btn-primary-border: $color-neutral-gray-93 !default;
+
+// $color-btn-secondary: $color-neutral-gray-93 !default;
+// $color-btn-secondary-bg: $color-neutral-white !default;
+// $color-btn-secondary-bg-hover: $color-neutral-gray-07 !default;
+// $color-btn-secondary-border: $color-neutral-gray-93 !default;
+
+// $color-btn-disabled: $color-neutral-gray-50 !default;
+// $color-btn-disabled-bg: $color-neutral-gray-07 !default;
+
+
+
+
+
+/*------------------------------------*\
+    #FORMS
+\*------------------------------------*/
+
+// $color-form: $color-neutral-gray-93 !default;
+// $color-form-bg: $color-neutral-white !default;
+// $color-form-border: $color-neutral-gray-73 !default;
+// $color-form-border-focus: $color-neutral-gray-93 !default;
+// $color-form-border-error: $color-utility-error !default;
+// $color-form-label: $color-neutral-gray-93 !default;
+// $color-form-info: $color-neutral-gray-73;
+// $color-form-placeholder: $color-neutral-gray-50;

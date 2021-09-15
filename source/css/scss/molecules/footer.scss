@@ -1,0 +1,32 @@
+/*------------------------------------*\
+  # FOOTER MOLECULES
+\*------------------------------------*/
+
+.footer_menu li {
+    font-weight: bold;
+    border: .25em solid $primary-color; // global?
+    padding: $global-padding;
+    
+    // @extend .page-title; // theres probably one of these I just need to figure it out
+}
+
+.footer_copyright a,
+.footer_nav a,
+.footer_contact a {
+    text-decoration: none;
+    color: $black;
+    box-shadow: inset 0 -4px 0 $primary-color; // this is alternative underline that rises up on hover // I think it can now be done with newer css on firefox atleast
+    transition: 300ms;
+}
+
+.footer_copyright a:hover,
+.footer_nav a:hover,
+.footer_contact a:hover {
+    border-bottom: none;
+    box-shadow: inset 0 -8px 0 $primary-color;
+}
+
+.footer_nav li {
+    display: inline; // simpler than a flex
+    margin-right: $global-margin;
+}

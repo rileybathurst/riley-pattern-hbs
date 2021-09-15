@@ -1,0 +1,32 @@
+{
+    "page": {
+		"title": "Page Title",
+		"description": "This is the page description",
+		"date": "August 31, 2019"
+	},
+    "navigation": [
+        {
+            "post": "Previous Post"
+        },
+        {
+            "post": "Next Post"
+        }
+    ],
+    "tags": [
+        {
+            "tag": "Thor"
+        },
+        {
+            "tag": "Captain America"
+        },
+        {
+            "tag": "Iron Man"
+        },
+        {
+            "tag": "Vision"
+        },
+        {
+            "tag": "Black Panther"
+        }
+    ]
+}
