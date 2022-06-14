@@ -1,3 +1,7 @@
+# Archived
+
+I'm going to move this to storybook when I move the site to SSG but till then I can still get the info at https://www.pattern.rileybathurst.com/
+
 # Riley Bathurst Pattern Lab
 
 Building this up in an atomic design way, theres a bunch to clean up in this theme so this will hopefully help me get it all sorted.
